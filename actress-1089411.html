@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>葵ななせ 出演作品まとめ | 巨乳・爆乳好きのまとめサイト</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--bg2:#161616;--bg3:#1e1e1e;--bg4:#252525;
+  --border:#2a2a2a;--border2:#333;
+  --text:#f0f0f0;--text2:#aaa;--muted:#555;
+  --red:#e63946;--red2:#c1121f;--red-bg:rgba(230,57,70,.12);--red-border:rgba(230,57,70,.3);
+  --radius:8px;--radius2:12px;
+}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+/* HEADER */
+header{background:rgba(13,13,13,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:0 24px;
+  display:flex;align-items:center;gap:16px;height:56px;
+  position:sticky;top:0;z-index:200}
+.logo{font-size:17px;font-weight:800;letter-spacing:-.5px;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--red)}
+.logo a{color:inherit}
+.h-search{flex:1;max-width:320px;background:var(--bg3);
+  border:1px solid var(--border2);border-radius:20px;
+  color:var(--text);font-size:13px;padding:7px 14px;outline:none;transition:.2s}
+.h-search:focus{border-color:var(--red);background:var(--bg4)}
+.h-count{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 56px)}
+aside{background:var(--bg2);border-right:1px solid var(--border);
+  padding:20px 14px;overflow-y:auto;position:sticky;top:56px;height:calc(100vh - 56px)}
+.s-section{margin-bottom:22px}
+.s-label{font-size:10px;font-weight:700;color:var(--muted);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;
+  display:flex;align-items:center;gap:6px}
+.s-label::before{content:"";display:inline-block;width:3px;height:11px;
+  background:var(--red);border-radius:2px}
+/* TAGS */
+.tag-list{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;padding:4px 10px;border-radius:20px;
+  border:1px solid var(--border2);background:var(--bg3);color:var(--text2);
+  cursor:pointer;user-select:none;transition:all .15s;white-space:nowrap}
+.tag:hover{border-color:var(--red-border);color:var(--text);background:var(--bg4)}
+.tag.active{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.clear-link{font-size:11px;color:var(--muted);background:none;
+  border:none;cursor:pointer;padding:0;text-decoration:underline;transition:.15s}
+.clear-link:hover{color:var(--text)}
+/* CHIPS */
+.main-wrap{padding:20px 24px;overflow-y:auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;min-height:0}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;
+  background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);
+  border-radius:20px;font-weight:500}
+.chip button{background:none;border:none;color:var(--red);cursor:pointer;
+  font-size:14px;line-height:1;padding:0;opacity:.8}
+.chip button:hover{opacity:1}
+/* BUST SLIDER */
+.bust-slider-wrap{padding:4px 2px}
+.bust-range-labels{display:flex;justify-content:space-between;
+  font-size:12px;font-weight:700;color:var(--text);margin-bottom:12px}
+.bust-range-labels span{background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);padding:3px 10px;border-radius:12px;min-width:56px;text-align:center}
+.slider-track{position:relative;height:4px;background:var(--bg4);
+  border-radius:2px;margin:16px 0 8px}
+.slider-fill{position:absolute;height:100%;background:var(--red);border-radius:2px;transition:.05s}
+.slider-track input[type=range]{position:absolute;width:100%;height:100%;
+  opacity:0;cursor:pointer;margin:0;top:0;left:0;pointer-events:none}
+.slider-track input[type=range]::-webkit-slider-thumb{pointer-events:all;
+  width:20px;height:20px;border-radius:50%;background:var(--red);
+  -webkit-appearance:none;cursor:pointer;box-shadow:0 0 0 4px var(--red-bg),0 0 0 2px var(--red)}
+.slider-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+/* MORE BTN */
+.more-btn{display:block;width:100%;margin-top:8px;padding:5px;text-align:center;
+  font-size:11px;cursor:pointer;border:1px solid var(--border2);
+  background:var(--bg3);color:var(--text2);border-radius:6px;transition:.15s}
+.more-btn:hover{border-color:var(--red-border);color:var(--red)}
+/* PICKUP */
+.pickup-section{margin-bottom:32px}
+.pickup-header{font-size:11px;font-weight:700;color:var(--red);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px}
+.pickup-header::before,.pickup-header::after{content:"";flex:1;height:1px;background:var(--red-border)}
+.pickup-card{border-color:var(--red-border) !important}
+.pickup-badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:700;
+  padding:3px 8px;border-radius:12px;background:var(--red);color:#fff;z-index:1;letter-spacing:.05em}
+/* KANA SECTION */
+.kana-section{margin-bottom:28px}
+.kana-header{font-size:12px;font-weight:700;color:var(--text2);
+  padding:5px 12px;margin-bottom:14px;
+  border-left:3px solid var(--red);background:var(--bg2);
+  border-radius:0 6px 6px 0;letter-spacing:.05em}
+.kana-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.row-more-btn{display:block;width:100%;margin-top:12px;padding:8px;text-align:center;
+  font-size:12px;font-weight:500;cursor:pointer;
+  border:1px solid var(--border2);background:var(--bg2);
+  color:var(--text2);border-radius:var(--radius);transition:.15s}
+.row-more-btn:hover{border-color:var(--red-border);color:var(--red)}
+/* ACTRESS GRID */
+.actress-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.actress-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius2);
+  overflow:hidden;display:block;transition:all .2s;position:relative}
+.actress-card:hover{border-color:var(--red-border);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.a-thumb{width:100%;aspect-ratio:3/4;background:var(--bg3);overflow:hidden;position:relative}
+.a-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.actress-card:hover .a-thumb img{transform:scale(1.05)}
+.no-photo{width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;font-size:36px;opacity:.2}
+.a-body{padding:10px 12px 12px}
+.a-name{font-size:13px;font-weight:700;margin-bottom:3px}
+.a-size{font-size:10px;color:var(--muted);margin-bottom:5px}
+.a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:10px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.a-count{font-size:10px;color:var(--muted);margin-top:5px}
+/* ACTRESS HERO */
+.breadcrumb{font-size:12px;color:var(--muted);padding:10px 24px;
+  background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb a{color:var(--red)}
+.actress-hero{padding:24px;background:var(--bg2);
+  border-bottom:1px solid var(--border);display:flex;gap:18px;align-items:flex-start}
+.hero-img{width:80px;height:107px;object-fit:cover;border-radius:var(--radius);
+  background:var(--bg3);flex-shrink:0}
+.hero-name{font-size:22px;font-weight:800;margin-bottom:5px}
+.hero-name span{color:var(--red)}
+.hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
+.hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
+  border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+/* COSTAR */
+.costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
+  background:var(--red-bg) !important;text-decoration:none;display:inline-block}
+.costar-link:hover{background:rgba(230,57,70,.22) !important}
+/* WORK GRID */
+.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.work-card{background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius2);overflow:hidden;transition:all .2s}
+.work-card:hover{border-color:var(--border2);transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.work-card.hidden{display:none}
+.w-thumb{width:100%;aspect-ratio:16/11;background:var(--bg3);overflow:hidden}
+.w-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.work-card:hover .w-thumb img{transform:scale(1.04)}
+.no-img{width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);font-size:12px}
+.w-body{padding:11px 13px 13px}
+.w-title{font-size:13px;font-weight:600;margin-bottom:8px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.w-title a:hover{color:var(--red)}
+.w-meta{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;font-size:11px;margin-bottom:8px}
+.w-meta dt{color:var(--muted);white-space:nowrap}
+.w-meta dd{color:var(--text2)}
+.g-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.g-tag{font-size:10px;padding:3px 8px;border-radius:10px;
+  background:var(--bg3);color:var(--text2);border:1px solid var(--border);
+  cursor:pointer;transition:.15s}
+.g-tag:hover{border-color:var(--red-border);color:var(--red)}
+.g-tag.active{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.btn-fanza{display:block;text-align:center;font-size:12px;font-weight:700;
+  padding:8px;border-radius:var(--radius);letter-spacing:.04em;
+  border:none;color:#fff;background:var(--red2);transition:.15s}
+.btn-fanza:hover{background:var(--red)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:13px}
+footer{text-align:center;padding:28px 24px;font-size:11px;
+  color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
+
+.costar-link{color:var(--red);border-color:var(--red-dim);background:var(--red-bg);text-decoration:none;display:inline-block}
+.costar-link:hover{background:#2d100d}
+.more-btn{display:inline-block;margin-top:6px;cursor:pointer;font-size:11px}
+.clickable-gtag{cursor:pointer;transition:.12s}
+.clickable-gtag:hover{border-color:var(--red-dim);color:var(--text);background:var(--bg2)}
+.a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid var(--red-dim);background:var(--red-bg);color:var(--red);margin-top:3px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><a href="index.html">巨乳・爆乳<span>まとめ</span></a></div>
+  <input class="h-search" id="titleSearch" type="text" placeholder="タイトルで絞り込み...">
+  <div class="h-count" id="countDisplay"></div>
+</header>
+<div class="breadcrumb"><a href="index.html">トップ</a> › 葵ななせ</div>
+<div class="actress-hero">
+  <img class="hero-img" src="http://pics.dmm.co.jp/mono/actjpgs/aoi_nanase.jpg" alt="葵ななせ">
+  <div>
+    <div class="hero-name"><span>葵ななせ</span> 出演作品まとめ</div>
+    <div class="hero-meta">B82 / W59 / H89　<span class="hero-cup">Gカップ</span></div>
+    <div class="hero-meta" style="margin-top:4px">全 14 件 ／ 2026/08/08 00:20 時点</div>
+  </div>
+</div>
+<div class="layout">
+  <aside>
+    <div class="s-section"><div class="s-label">ジャンル</div><div class="tag-list"><span class="tag" data-kind="genre" data-val="3P・4P">3P・4P</span><span class="tag" data-kind="genre" data-val="4K">4K</span><span class="tag" data-kind="genre" data-val="M男">M男</span><span class="tag" data-kind="genre" data-val="イメージビデオ">イメージビデオ</span><span class="tag" data-kind="genre" data-val="キス・接吻">キス・接吻</span><span class="tag" data-kind="genre" data-val="キャバ嬢・風俗嬢">キャバ嬢・風俗嬢</span><span class="tag" data-kind="genre" data-val="コスプレ">コスプレ</span><span class="tag" data-kind="genre" data-val="スレンダー">スレンダー</span><span class="tag" data-kind="genre" data-val="セクシー">セクシー</span><span class="tag" data-kind="genre" data-val="デカチン・巨根">デカチン・巨根</span><span class="tag" data-kind="genre" data-val="デビュー作品">デビュー作品</span><span class="tag" data-kind="genre" data-val="デート">デート</span><span class="tag" data-kind="genre" data-val="ドラマ">ドラマ</span><span class="tag" data-kind="genre" data-val="ハイビジョン">ハイビジョン</span><span class="tag" data-kind="genre" data-val="ビジネススーツ">ビジネススーツ</span><span class="tag" data-kind="genre" data-val="フェラ">フェラ</span><span class="tag" data-kind="genre" data-val="ヘルス・ソープ">ヘルス・ソープ</span><span class="tag" data-kind="genre" data-val="主観">主観</span><span class="tag" data-kind="genre" data-val="制服">制服</span><span class="tag" data-kind="genre" data-val="単体作品">単体作品</span><span class="tag" data-kind="genre" data-val="和服・浴衣">和服・浴衣</span><span class="tag" data-kind="genre" data-val="女子大生">女子大生</span><span class="tag" data-kind="genre" data-val="姉・妹">姉・妹</span><span class="tag" data-kind="genre" data-val="寝取り・寝取られ・NTR">寝取り・寝取られ・NTR</span><span class="tag" data-kind="genre" data-val="巨乳">巨乳</span><span class="tag" data-kind="genre" data-val="幼なじみ">幼なじみ</span><span class="tag" data-kind="genre" data-val="放尿・お漏らし">放尿・お漏らし</span><span class="tag" data-kind="genre" data-val="汗だく">汗だく</span><span class="tag" data-kind="genre" data-val="温泉">温泉</span><span class="tag" data-kind="genre" data-val="痴女">痴女</span><span class="tag" data-kind="genre" data-val="盗撮・のぞき">盗撮・のぞき</span><span class="tag" data-kind="genre" data-val="素人">素人</span><span class="tag" data-kind="genre" data-val="美少女">美少女</span><span class="tag" data-kind="genre" data-val="職業色々">職業色々</span><span class="tag" data-kind="genre" data-val="部活・マネージャー">部活・マネージャー</span><span class="tag" data-kind="genre" data-val="顔射">顔射</span></div></div><div class="s-section"><div class="s-label">監督</div><div class="tag-list"><span class="tag" data-kind="director" data-val="U吉">U吉</span><span class="tag" data-kind="director" data-val="ZAMPA">ZAMPA</span><span class="tag" data-kind="director" data-val="いろり牧場">いろり牧場</span><span class="tag" data-kind="director" data-val="こくもく">こくもく</span><span class="tag" data-kind="director" data-val="ザック荒井">ザック荒井</span><span class="tag" data-kind="director" data-val="ジャケン小玉">ジャケン小玉</span><span class="tag" data-kind="director" data-val="ダイナナ">ダイナナ</span><span class="tag" data-kind="director" data-val="ヘルペス☆タカ">ヘルペス☆タカ</span><span class="tag" data-kind="director" data-val="前田文豪">前田文豪</span><span class="tag" data-kind="director" data-val="大崎広浩治">大崎広浩治</span><span class="tag" data-kind="director" data-val="太宰珍歩">太宰珍歩</span><span class="tag" data-kind="director" data-val="星シュート">星シュート</span></div></div><div class="s-section"><div class="s-label">メーカー</div><div class="tag-list"><span class="tag" data-kind="maker" data-val="REbecca">REbecca</span><span class="tag" data-kind="maker" data-val="SODクリエイト">SODクリエイト</span></div></div><div class="s-section"><div class="s-label">共演女優（1人）</div><div class="tag-list"><a class="tag costar-link" href="actress-1089411.html">葵ななせ</a></div></div>
+    <div class="s-section"><button class="clear-link" id="clearAll">すべてクリア</button></div>
+  </aside>
+  <div class="main-wrap">
+    <div class="chips" id="chips"></div>
+    <div class="works-grid" id="grid">
+
+    <div class="work-card"
+         data-title="【略奪NTR温泉】婚約記念で泊まる温泉宿のクズ従業員にメス堕ちアクメさせられ、自ら浮気チ●ポを求めてしまう巨乳プレ花嫁。 葵ななせ【特典映像付き】"
+         data-genres="ハイビジョン,和服・浴衣,3P・4P,寝取り・寝取られ・NTR,温泉,単体作品"
+         data-directors="ジャケン小玉"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00251v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00251v/1start00251vpl.jpg" alt="【略奪NTR温泉】婚約記念で泊まる温泉宿のクズ従業員にメス堕ちアクメさせられ、自ら浮気チ●ポを求めてしまう巨乳プレ花嫁。 葵ななせ【特典映像付き】" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00251v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">【略奪NTR温泉】婚約記念で泊まる温泉宿のクズ従業員にメス堕ちアクメさせられ、自ら浮気チ●ポを求めてしまう巨乳プレ花嫁。 葵ななせ【特典映像付き】</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-12-17</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>ジャケン小玉</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00251v</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('和服・浴衣')">和服・浴衣</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('寝取り・寝取られ・NTR')">寝取り・寝取られ・NTR</span><span class="g-tag clickable-gtag" onclick="filterGenre('温泉')">温泉</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00251v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="半年間隠し撮りし続けていた隣人就活生（推定 G カップ）が家の前で潰れていたので、介抱のフリをして無抵抗なカラダを臭ツバまみれになるまで舐めまわした。 葵ななせ"
+         data-genres="ビジネススーツ,4K,ハイビジョン,寝取り・寝取られ・NTR,単体作品,盗撮・のぞき,スレンダー,巨乳"
+         data-directors="こくもく"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00230&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00230/1start00230pl.jpg" alt="半年間隠し撮りし続けていた隣人就活生（推定 G カップ）が家の前で潰れていたので、介抱のフリをして無抵抗なカラダを臭ツバまみれになるまで舐めまわした。 葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00230&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">半年間隠し撮りし続けていた隣人就活生（推定 G カップ）が家の前で潰れていたので、介抱のフリをして無抵抗なカラダを臭ツバまみれになるまで舐めまわした。 葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-11-19</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>こくもく</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00230</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ビジネススーツ')">ビジネススーツ</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('寝取り・寝取られ・NTR')">寝取り・寝取られ・NTR</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('盗撮・のぞき')">盗撮・のぞき</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00230&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="駅前の路上ミュージシャンと工事現場の汗臭いおっさんが、唾液を絡めまくるベロちゅうで体液交換し合う仲になったワケ。 葵ななせ"
+         data-genres="4K,ハイビジョン,巨乳,キス・接吻,美少女,ドラマ,単体作品"
+         data-directors="太宰珍歩"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00204&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00204/1start00204pl.jpg" alt="駅前の路上ミュージシャンと工事現場の汗臭いおっさんが、唾液を絡めまくるベロちゅうで体液交換し合う仲になったワケ。 葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00204&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">駅前の路上ミュージシャンと工事現場の汗臭いおっさんが、唾液を絡めまくるベロちゅうで体液交換し合う仲になったワケ。 葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-10-15</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>太宰珍歩</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00204</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('キス・接吻')">キス・接吻</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドラマ')">ドラマ</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00204&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="業務中3時間ずっと声我慢しながら即ズボハードピストンで突かれまくる引っ越し屋アルバイト・ななせちゃん（19） 葵ななせ"
+         data-genres="単体作品,ハイビジョン,美少女,職業色々,放尿・お漏らし,汗だく,巨乳"
+         data-directors="ダイナナ"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00185&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00185/1start00185pl.jpg" alt="業務中3時間ずっと声我慢しながら即ズボハードピストンで突かれまくる引っ越し屋アルバイト・ななせちゃん（19） 葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00185&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">業務中3時間ずっと声我慢しながら即ズボハードピストンで突かれまくる引っ越し屋アルバイト・ななせちゃん（19） 葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-09-17</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>ダイナナ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00185</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('職業色々')">職業色々</span><span class="g-tag clickable-gtag" onclick="filterGenre('放尿・お漏らし')">放尿・お漏らし</span><span class="g-tag clickable-gtag" onclick="filterGenre('汗だく')">汗だく</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00185&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="3匹のキモおじを生意気な地雷系メスガキがいいなりペット化！1日中どこでもず～っと4P乱交デート！ 葵ななせ"
+         data-genres="4K,単体作品,ハイビジョン,M男,デート,3P・4P,痴女,美少女"
+         data-directors="いろり牧場"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00171&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00171/1start00171pl.jpg" alt="3匹のキモおじを生意気な地雷系メスガキがいいなりペット化！1日中どこでもず～っと4P乱交デート！ 葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00171&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">3匹のキモおじを生意気な地雷系メスガキがいいなりペット化！1日中どこでもず～っと4P乱交デート！ 葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-08-20</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>いろり牧場</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00171</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('M男')">M男</span><span class="g-tag clickable-gtag" onclick="filterGenre('デート')">デート</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('痴女')">痴女</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00171&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="久しぶりに再会したら大人っぽくなっていた幼馴染はヌキテクも成長していて暴発顔射が止まらない！3日間で12発ヤリまくったひと夏の思い出 葵ななせ"
+         data-genres="4K,単体作品,ハイビジョン,フェラ,顔射,巨乳,幼なじみ,主観"
+         data-directors="U吉"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00139&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00139/1start00139pl.jpg" alt="久しぶりに再会したら大人っぽくなっていた幼馴染はヌキテクも成長していて暴発顔射が止まらない！3日間で12発ヤリまくったひと夏の思い出 葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00139&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">久しぶりに再会したら大人っぽくなっていた幼馴染はヌキテクも成長していて暴発顔射が止まらない！3日間で12発ヤリまくったひと夏の思い出 葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-07-23</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>U吉</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00139</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('フェラ')">フェラ</span><span class="g-tag clickable-gtag" onclick="filterGenre('顔射')">顔射</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('幼なじみ')">幼なじみ</span><span class="g-tag clickable-gtag" onclick="filterGenre('主観')">主観</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00139&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="Nanase 僕だけのラブリーメイド・葵ななせ"
+         data-genres="ハイビジョン,単体作品,巨乳,セクシー,イメージビデオ"
+         data-directors="ヘルペス☆タカ"
+         data-maker="REbecca"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_346rebd00855&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/h_346rebd00855/h_346rebd00855pl.jpg" alt="Nanase 僕だけのラブリーメイド・葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_346rebd00855&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">Nanase 僕だけのラブリーメイド・葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-07-04</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>ヘルペス☆タカ</dd>
+          <dt>メーカー</dt><dd>REbecca</dd>
+          
+          <dt>品番</dt><dd>h_346rebd00855</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('セクシー')">セクシー</span><span class="g-tag clickable-gtag" onclick="filterGenre('イメージビデオ')">イメージビデオ</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_346rebd00855&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="しつこい生徒指導教師に目をつけられて毎日校内で舐めあい性交をしています。葵ななせ"
+         data-genres="ハイビジョン,部活・マネージャー,汗だく,制服,美少女,単体作品"
+         data-directors="大崎広浩治"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00116&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00116/1start00116pl.jpg" alt="しつこい生徒指導教師に目をつけられて毎日校内で舐めあい性交をしています。葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00116&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">しつこい生徒指導教師に目をつけられて毎日校内で舐めあい性交をしています。葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-06-11</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>大崎広浩治</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00116</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('部活・マネージャー')">部活・マネージャー</span><span class="g-tag clickable-gtag" onclick="filterGenre('汗だく')">汗だく</span><span class="g-tag clickable-gtag" onclick="filterGenre('制服')">制服</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00116&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="性に興味深々な彼女の巨乳妹の無自覚な誘惑に負けてNTRされちゃった話 葵ななせ"
+         data-genres="ハイビジョン,4K,姉・妹,女子大生,巨乳,ドラマ,単体作品"
+         data-directors="前田文豪"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00098&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00098/1start00098pl.jpg" alt="性に興味深々な彼女の巨乳妹の無自覚な誘惑に負けてNTRされちゃった話 葵ななせ" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00098&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">性に興味深々な彼女の巨乳妹の無自覚な誘惑に負けてNTRされちゃった話 葵ななせ</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-05-14</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>前田文豪</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00098</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('姉・妹')">姉・妹</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドラマ')">ドラマ</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00098&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="天然Gカップ美少女がピッチピチの身体をめいっぱい使って全力ご奉仕！新人風俗嬢ななせの風俗LAND5！ 葵ななせ【圧倒的4K映像でヌク！】"
+         data-genres="ハイビジョン,4K,巨乳,主観,ヘルス・ソープ,キャバ嬢・風俗嬢,単体作品"
+         data-directors="ZAMPA"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00077&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00077/1start00077pl.jpg" alt="天然Gカップ美少女がピッチピチの身体をめいっぱい使って全力ご奉仕！新人風俗嬢ななせの風俗LAND5！ 葵ななせ【圧倒的4K映像でヌク！】" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00077&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">天然Gカップ美少女がピッチピチの身体をめいっぱい使って全力ご奉仕！新人風俗嬢ななせの風俗LAND5！ 葵ななせ【圧倒的4K映像でヌク！】</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-04-23</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>ZAMPA</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00077</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('主観')">主観</span><span class="g-tag clickable-gtag" onclick="filterGenre('ヘルス・ソープ')">ヘルス・ソープ</span><span class="g-tag clickable-gtag" onclick="filterGenre('キャバ嬢・風俗嬢')">キャバ嬢・風俗嬢</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00077&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="絶頂開発 小柄な敏感BODYを震わせて「もう無理ぃっ！」って言っても追撃激ピスは終わらない！巨根大絶頂 葵ななせ【圧倒的4K映像でヌク！】"
+         data-genres="4K,ハイビジョン,3P・4P,デカチン・巨根,女子大生,巨乳,単体作品"
+         data-directors="ザック荒井"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00052&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00052/1start00052pl.jpg" alt="絶頂開発 小柄な敏感BODYを震わせて「もう無理ぃっ！」って言っても追撃激ピスは終わらない！巨根大絶頂 葵ななせ【圧倒的4K映像でヌク！】" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00052&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">絶頂開発 小柄な敏感BODYを震わせて「もう無理ぃっ！」って言っても追撃激ピスは終わらない！巨根大絶頂 葵ななせ【圧倒的4K映像でヌク！】</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-03-26</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>ザック荒井</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>巨根大絶頂</dd>
+          <dt>品番</dt><dd>1start00052</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('デカチン・巨根')">デカチン・巨根</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00052&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="葵ななせ19才、ヤリたいこと全部ヤリたいです！初めてづくしの6コーナー190分SP！【圧倒的4K映像でヌク！】"
+         data-genres="4K,単体作品,ハイビジョン,3P・4P,コスプレ,巨乳,女子大生,美少女"
+         data-directors="星シュート"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00021&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00021/1start00021pl.jpg" alt="葵ななせ19才、ヤリたいこと全部ヤリたいです！初めてづくしの6コーナー190分SP！【圧倒的4K映像でヌク！】" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00021&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">葵ななせ19才、ヤリたいこと全部ヤリたいです！初めてづくしの6コーナー190分SP！【圧倒的4K映像でヌク！】</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-02-06</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>星シュート</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00021</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('コスプレ')">コスプレ</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00021&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="AVデビュー前の秘蔵映像公開！キラッキラの19才！童顔巨乳が眩しすぎる女の子！ 葵ななせ【圧倒的4K映像でヌク！】"
+         data-genres="4K,ハイビジョン,美少女,巨乳,女子大生,デビュー作品,単体作品"
+         data-directors="星シュート"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1stzy00012&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1stzy00012/1stzy00012pl.jpg" alt="AVデビュー前の秘蔵映像公開！キラッキラの19才！童顔巨乳が眩しすぎる女の子！ 葵ななせ【圧倒的4K映像でヌク！】" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1stzy00012&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">AVデビュー前の秘蔵映像公開！キラッキラの19才！童顔巨乳が眩しすぎる女の子！ 葵ななせ【圧倒的4K映像でヌク！】</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-01-16</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>星シュート</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>AVデビュー前の秘蔵映像公開！</dd>
+          <dt>品番</dt><dd>1stzy00012</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('デビュー作品')">デビュー作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1stzy00012&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="19才のきらめき 童顔Gカップ巨乳が眩しい現役女子大生 葵ななせ AV DEBUT【圧倒的4K映像でヌク！】"
+         data-genres="単体作品,ハイビジョン,4K,美少女,巨乳,素人,女子大生,デビュー作品"
+         data-directors="星シュート"
+         data-maker="SODクリエイト"
+         data-actresses="葵ななせ">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00005&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00005/1start00005pl.jpg" alt="19才のきらめき 童顔Gカップ巨乳が眩しい現役女子大生 葵ななせ AV DEBUT【圧倒的4K映像でヌク！】" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00005&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">19才のきらめき 童顔Gカップ巨乳が眩しい現役女子大生 葵ななせ AV DEBUT【圧倒的4K映像でヌク！】</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2024-01-10</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>葵ななせ</dd>
+          <dt>監督</dt><dd>星シュート</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>AV DEBUT(STAR)</dd>
+          <dt>品番</dt><dd>1start00005</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('素人')">素人</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('デビュー作品')">デビュー作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00005&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+      <div class="empty" id="emptyMsg" style="display:none">該当作品がありませんでした</div>
+    </div>
+  </div>
+</div>
+<footer style="text-align:center;padding:24px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:20px">
+  当サイトはアフィリエイトリンクを含みます。© 2025 巨乳・爆乳好きのまとめサイト<br><br>
+  <a href="https://affiliate.dmm.com/api/"><img src="https://p.dmm.co.jp/p/affiliate/web_service/r18_135_17.gif" width="135" height="17" alt="WEB SERVICE BY FANZA"></a>
+</footer>
+<script>
+const cards   = document.querySelectorAll(".work-card");
+const selected = { genre: new Set(), director: new Set(), maker: new Set(), actress: new Set() };
+let titleQuery = "";
+
+function applyFilter() {
+  let count = 0;
+  cards.forEach(card => {
+    const ok =
+      (!titleQuery || (card.dataset.title||"").includes(titleQuery)) &&
+      (selected.genre.size    === 0 || [...selected.genre   ].every(v => (card.dataset.genres   ||"").split(",").includes(v))) &&
+      (selected.director.size === 0 || [...selected.director].every(v => (card.dataset.directors||"").split(",").includes(v))) &&
+      (selected.maker.size    === 0 || selected.maker.has(card.dataset.maker||"")) &&
+      (selected.actress.size  === 0 || [...selected.actress ].every(v => (card.dataset.actresses||"").split(",").includes(v)));
+    card.classList.toggle("hidden", !ok);
+    if (ok) count++;
+  });
+  document.getElementById("countDisplay").textContent = count + " 件";
+  document.getElementById("emptyMsg").style.display   = count === 0 ? "block" : "none";
+  renderChips();
+}
+
+function renderChips() {
+  const el = document.getElementById("chips");
+  el.innerHTML = "";
+  Object.entries(selected).forEach(([kind, set]) => {
+    set.forEach(val => {
+      const c = document.createElement("span");
+      c.className = "chip";
+      c.innerHTML = val + ` <button onclick="removeFilter('${kind}','${val}')">×</button>`;
+      el.appendChild(c);
+    });
+  });
+}
+
+document.querySelectorAll(".tag[data-kind]").forEach(el => {
+  el.onclick = () => {
+    const kind = el.dataset.kind, val = el.dataset.val;
+    selected[kind].has(val) ? selected[kind].delete(val) : selected[kind].add(val);
+    el.classList.toggle("active");
+    applyFilter();
+  };
+});
+
+window.filterGenre = (g) => {
+  selected.genre.add(g);
+  document.querySelector(`.tag[data-kind="genre"][data-val="${g}"]`)?.classList.add("active");
+  applyFilter();
+};
+
+document.getElementById("titleSearch").oninput = e => { titleQuery = e.target.value.trim(); applyFilter(); };
+document.getElementById("clearAll").onclick = () => {
+  Object.values(selected).forEach(s => s.clear());
+  titleQuery = "";
+  document.getElementById("titleSearch").value = "";
+  document.querySelectorAll(".tag.active").forEach(t => t.classList.remove("active"));
+  applyFilter();
+};
+
+window.removeFilter = (kind, val) => {
+  selected[kind].delete(val);
+  document.querySelector(`.tag[data-kind="${kind}"][data-val="${val}"]`)?.classList.remove("active");
+  applyFilter();
+};
+
+window.toggleCostar = () => {
+  const hidden = document.getElementById("costar_hidden");
+  const btn    = document.getElementById("costar_btn");
+  if (!hidden) return;
+  const open = hidden.style.display === "none";
+  hidden.style.display = open ? "" : "none";
+  btn.textContent = open
+    ? "▲ 閉じる"
+    : "+ " + hidden.querySelectorAll(".tag").length + "人 もっと見る";
+};
+
+applyFilter();
+</script>
+</body>
+</html>

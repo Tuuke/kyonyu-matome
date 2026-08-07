@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>天神羽衣 出演作品まとめ | 巨乳・爆乳好きのまとめサイト</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--bg2:#161616;--bg3:#1e1e1e;--bg4:#252525;
+  --border:#2a2a2a;--border2:#333;
+  --text:#f0f0f0;--text2:#aaa;--muted:#555;
+  --red:#e63946;--red2:#c1121f;--red-bg:rgba(230,57,70,.12);--red-border:rgba(230,57,70,.3);
+  --radius:8px;--radius2:12px;
+}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+/* HEADER */
+header{background:rgba(13,13,13,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:0 24px;
+  display:flex;align-items:center;gap:16px;height:56px;
+  position:sticky;top:0;z-index:200}
+.logo{font-size:17px;font-weight:800;letter-spacing:-.5px;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--red)}
+.logo a{color:inherit}
+.h-search{flex:1;max-width:320px;background:var(--bg3);
+  border:1px solid var(--border2);border-radius:20px;
+  color:var(--text);font-size:13px;padding:7px 14px;outline:none;transition:.2s}
+.h-search:focus{border-color:var(--red);background:var(--bg4)}
+.h-count{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 56px)}
+aside{background:var(--bg2);border-right:1px solid var(--border);
+  padding:20px 14px;overflow-y:auto;position:sticky;top:56px;height:calc(100vh - 56px)}
+.s-section{margin-bottom:22px}
+.s-label{font-size:10px;font-weight:700;color:var(--muted);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;
+  display:flex;align-items:center;gap:6px}
+.s-label::before{content:"";display:inline-block;width:3px;height:11px;
+  background:var(--red);border-radius:2px}
+/* TAGS */
+.tag-list{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;padding:4px 10px;border-radius:20px;
+  border:1px solid var(--border2);background:var(--bg3);color:var(--text2);
+  cursor:pointer;user-select:none;transition:all .15s;white-space:nowrap}
+.tag:hover{border-color:var(--red-border);color:var(--text);background:var(--bg4)}
+.tag.active{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.clear-link{font-size:11px;color:var(--muted);background:none;
+  border:none;cursor:pointer;padding:0;text-decoration:underline;transition:.15s}
+.clear-link:hover{color:var(--text)}
+/* CHIPS */
+.main-wrap{padding:20px 24px;overflow-y:auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;min-height:0}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;
+  background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);
+  border-radius:20px;font-weight:500}
+.chip button{background:none;border:none;color:var(--red);cursor:pointer;
+  font-size:14px;line-height:1;padding:0;opacity:.8}
+.chip button:hover{opacity:1}
+/* BUST SLIDER */
+.bust-slider-wrap{padding:4px 2px}
+.bust-range-labels{display:flex;justify-content:space-between;
+  font-size:12px;font-weight:700;color:var(--text);margin-bottom:12px}
+.bust-range-labels span{background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);padding:3px 10px;border-radius:12px;min-width:56px;text-align:center}
+.slider-track{position:relative;height:4px;background:var(--bg4);
+  border-radius:2px;margin:16px 0 8px}
+.slider-fill{position:absolute;height:100%;background:var(--red);border-radius:2px;transition:.05s}
+.slider-track input[type=range]{position:absolute;width:100%;height:100%;
+  opacity:0;cursor:pointer;margin:0;top:0;left:0;pointer-events:none}
+.slider-track input[type=range]::-webkit-slider-thumb{pointer-events:all;
+  width:20px;height:20px;border-radius:50%;background:var(--red);
+  -webkit-appearance:none;cursor:pointer;box-shadow:0 0 0 4px var(--red-bg),0 0 0 2px var(--red)}
+.slider-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+/* MORE BTN */
+.more-btn{display:block;width:100%;margin-top:8px;padding:5px;text-align:center;
+  font-size:11px;cursor:pointer;border:1px solid var(--border2);
+  background:var(--bg3);color:var(--text2);border-radius:6px;transition:.15s}
+.more-btn:hover{border-color:var(--red-border);color:var(--red)}
+/* PICKUP */
+.pickup-section{margin-bottom:32px}
+.pickup-header{font-size:11px;font-weight:700;color:var(--red);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px}
+.pickup-header::before,.pickup-header::after{content:"";flex:1;height:1px;background:var(--red-border)}
+.pickup-card{border-color:var(--red-border) !important}
+.pickup-badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:700;
+  padding:3px 8px;border-radius:12px;background:var(--red);color:#fff;z-index:1;letter-spacing:.05em}
+/* KANA SECTION */
+.kana-section{margin-bottom:28px}
+.kana-header{font-size:12px;font-weight:700;color:var(--text2);
+  padding:5px 12px;margin-bottom:14px;
+  border-left:3px solid var(--red);background:var(--bg2);
+  border-radius:0 6px 6px 0;letter-spacing:.05em}
+.kana-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.row-more-btn{display:block;width:100%;margin-top:12px;padding:8px;text-align:center;
+  font-size:12px;font-weight:500;cursor:pointer;
+  border:1px solid var(--border2);background:var(--bg2);
+  color:var(--text2);border-radius:var(--radius);transition:.15s}
+.row-more-btn:hover{border-color:var(--red-border);color:var(--red)}
+/* ACTRESS GRID */
+.actress-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.actress-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius2);
+  overflow:hidden;display:block;transition:all .2s;position:relative}
+.actress-card:hover{border-color:var(--red-border);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.a-thumb{width:100%;aspect-ratio:3/4;background:var(--bg3);overflow:hidden;position:relative}
+.a-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.actress-card:hover .a-thumb img{transform:scale(1.05)}
+.no-photo{width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;font-size:36px;opacity:.2}
+.a-body{padding:10px 12px 12px}
+.a-name{font-size:13px;font-weight:700;margin-bottom:3px}
+.a-size{font-size:10px;color:var(--muted);margin-bottom:5px}
+.a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:10px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.a-count{font-size:10px;color:var(--muted);margin-top:5px}
+/* ACTRESS HERO */
+.breadcrumb{font-size:12px;color:var(--muted);padding:10px 24px;
+  background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb a{color:var(--red)}
+.actress-hero{padding:24px;background:var(--bg2);
+  border-bottom:1px solid var(--border);display:flex;gap:18px;align-items:flex-start}
+.hero-img{width:80px;height:107px;object-fit:cover;border-radius:var(--radius);
+  background:var(--bg3);flex-shrink:0}
+.hero-name{font-size:22px;font-weight:800;margin-bottom:5px}
+.hero-name span{color:var(--red)}
+.hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
+.hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
+  border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+/* COSTAR */
+.costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
+  background:var(--red-bg) !important;text-decoration:none;display:inline-block}
+.costar-link:hover{background:rgba(230,57,70,.22) !important}
+/* WORK GRID */
+.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.work-card{background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius2);overflow:hidden;transition:all .2s}
+.work-card:hover{border-color:var(--border2);transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.work-card.hidden{display:none}
+.w-thumb{width:100%;aspect-ratio:16/11;background:var(--bg3);overflow:hidden}
+.w-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.work-card:hover .w-thumb img{transform:scale(1.04)}
+.no-img{width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);font-size:12px}
+.w-body{padding:11px 13px 13px}
+.w-title{font-size:13px;font-weight:600;margin-bottom:8px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.w-title a:hover{color:var(--red)}
+.w-meta{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;font-size:11px;margin-bottom:8px}
+.w-meta dt{color:var(--muted);white-space:nowrap}
+.w-meta dd{color:var(--text2)}
+.g-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.g-tag{font-size:10px;padding:3px 8px;border-radius:10px;
+  background:var(--bg3);color:var(--text2);border:1px solid var(--border);
+  cursor:pointer;transition:.15s}
+.g-tag:hover{border-color:var(--red-border);color:var(--red)}
+.g-tag.active{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.btn-fanza{display:block;text-align:center;font-size:12px;font-weight:700;
+  padding:8px;border-radius:var(--radius);letter-spacing:.04em;
+  border:none;color:#fff;background:var(--red2);transition:.15s}
+.btn-fanza:hover{background:var(--red)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:13px}
+footer{text-align:center;padding:28px 24px;font-size:11px;
+  color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
+
+.costar-link{color:var(--red);border-color:var(--red-dim);background:var(--red-bg);text-decoration:none;display:inline-block}
+.costar-link:hover{background:#2d100d}
+.more-btn{display:inline-block;margin-top:6px;cursor:pointer;font-size:11px}
+.clickable-gtag{cursor:pointer;transition:.12s}
+.clickable-gtag:hover{border-color:var(--red-dim);color:var(--text);background:var(--bg2)}
+.a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid var(--red-dim);background:var(--red-bg);color:var(--red);margin-top:3px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><a href="index.html">巨乳・爆乳<span>まとめ</span></a></div>
+  <input class="h-search" id="titleSearch" type="text" placeholder="タイトルで絞り込み...">
+  <div class="h-count" id="countDisplay"></div>
+</header>
+<div class="breadcrumb"><a href="index.html">トップ</a> › 天神羽衣</div>
+<div class="actress-hero">
+  <img class="hero-img" src="http://pics.dmm.co.jp/mono/actjpgs/amagami_ui.jpg" alt="天神羽衣">
+  <div>
+    <div class="hero-name"><span>天神羽衣</span> 出演作品まとめ</div>
+    <div class="hero-meta">B80 / W56 / H75　<span class="hero-cup">Eカップ</span></div>
+    <div class="hero-meta" style="margin-top:4px">全 23 件 ／ 2026/08/08 00:20 時点</div>
+  </div>
+</div>
+<div class="layout">
+  <aside>
+    <div class="s-section"><div class="s-label">ジャンル</div><div class="tag-list"><span class="tag" data-kind="genre" data-val="3P・4P">3P・4P</span><span class="tag" data-kind="genre" data-val="4K">4K</span><span class="tag" data-kind="genre" data-val="8KVR">8KVR</span><span class="tag" data-kind="genre" data-val="M男">M男</span><span class="tag" data-kind="genre" data-val="OL">OL</span><span class="tag" data-kind="genre" data-val="VR専用">VR専用</span><span class="tag" data-kind="genre" data-val="おもちゃ">おもちゃ</span><span class="tag" data-kind="genre" data-val="アイドル・芸能人">アイドル・芸能人</span><span class="tag" data-kind="genre" data-val="アクメ・オーガズム">アクメ・オーガズム</span><span class="tag" data-kind="genre" data-val="イラマチオ">イラマチオ</span><span class="tag" data-kind="genre" data-val="カップル">カップル</span><span class="tag" data-kind="genre" data-val="カーセックス">カーセックス</span><span class="tag" data-kind="genre" data-val="キス・接吻">キス・接吻</span><span class="tag" data-kind="genre" data-val="スレンダー">スレンダー</span><span class="tag" data-kind="genre" data-val="セクシー">セクシー</span><span class="tag" data-kind="genre" data-val="デカチン・巨根">デカチン・巨根</span><span class="tag" data-kind="genre" data-val="デビュー作品">デビュー作品</span><span class="tag" data-kind="genre" data-val="デート">デート</span><span class="tag" data-kind="genre" data-val="ドキュメンタリー">ドキュメンタリー</span><span class="tag" data-kind="genre" data-val="ドラマ">ドラマ</span><span class="tag" data-kind="genre" data-val="ハイクオリティVR">ハイクオリティVR</span><span class="tag" data-kind="genre" data-val="ハイビジョン">ハイビジョン</span><span class="tag" data-kind="genre" data-val="ハメ撮り">ハメ撮り</span><span class="tag" data-kind="genre" data-val="フェラ">フェラ</span><span class="tag" data-kind="genre" data-val="ローション・オイル">ローション・オイル</span><span class="tag" data-kind="genre" data-val="不倫">不倫</span><span class="tag" data-kind="genre" data-val="中出し">中出し</span><span class="tag" data-kind="genre" data-val="乱交">乱交</span><span class="tag" data-kind="genre" data-val="単体作品">単体作品</span><span class="tag" data-kind="genre" data-val="即ハメ">即ハメ</span><span class="tag" data-kind="genre" data-val="和服・浴衣">和服・浴衣</span><span class="tag" data-kind="genre" data-val="女子大生">女子大生</span><span class="tag" data-kind="genre" data-val="寝取り・寝取られ・NTR">寝取り・寝取られ・NTR</span><span class="tag" data-kind="genre" data-val="巨乳">巨乳</span><span class="tag" data-kind="genre" data-val="手コキ">手コキ</span><span class="tag" data-kind="genre" data-val="拘束">拘束</span><span class="tag" data-kind="genre" data-val="放尿・お漏らし">放尿・お漏らし</span><span class="tag" data-kind="genre" data-val="汗だく">汗だく</span><span class="tag" data-kind="genre" data-val="淫乱・ハード系">淫乱・ハード系</span><span class="tag" data-kind="genre" data-val="淫語">淫語</span><span class="tag" data-kind="genre" data-val="温泉">温泉</span><span class="tag" data-kind="genre" data-val="潮吹き">潮吹き</span><span class="tag" data-kind="genre" data-val="筋肉">筋肉</span><span class="tag" data-kind="genre" data-val="素人">素人</span><span class="tag" data-kind="genre" data-val="美少女">美少女</span><span class="tag" data-kind="genre" data-val="羞恥">羞恥</span><span class="tag" data-kind="genre" data-val="職業色々">職業色々</span><span class="tag" data-kind="genre" data-val="胸チラ">胸チラ</span><span class="tag" data-kind="genre" data-val="野外・露出">野外・露出</span><span class="tag" data-kind="genre" data-val="顔射">顔射</span><span class="tag" data-kind="genre" data-val="騎乗位">騎乗位</span></div></div><div class="s-section"><div class="s-label">監督</div><div class="tag-list"><span class="tag" data-kind="director" data-val="CHAIN宗">CHAIN宗</span><span class="tag" data-kind="director" data-val="あおのゆうこ">あおのゆうこ</span><span class="tag" data-kind="director" data-val="きとるね川口">きとるね川口</span><span class="tag" data-kind="director" data-val="こくもく">こくもく</span><span class="tag" data-kind="director" data-val="さもあり">さもあり</span><span class="tag" data-kind="director" data-val="コスモアタック渡辺">コスモアタック渡辺</span><span class="tag" data-kind="director" data-val="ザック荒井">ザック荒井</span><span class="tag" data-kind="director" data-val="スケザネヘイタ">スケザネヘイタ</span><span class="tag" data-kind="director" data-val="ダイナナ">ダイナナ</span><span class="tag" data-kind="director" data-val="チク兄">チク兄</span><span class="tag" data-kind="director" data-val="井上ジャパン">井上ジャパン</span><span class="tag" data-kind="director" data-val="太宰珍歩">太宰珍歩</span><span class="tag" data-kind="director" data-val="小松セブンティーン">小松セブンティーン</span><span class="tag" data-kind="director" data-val="木村浩之">木村浩之</span><span class="tag" data-kind="director" data-val="矢澤レシーブ">矢澤レシーブ</span></div></div><div class="s-section"><div class="s-label">メーカー</div><div class="tag-list"><span class="tag" data-kind="maker" data-val="REbecca">REbecca</span><span class="tag" data-kind="maker" data-val="SODクリエイト">SODクリエイト</span></div></div><div class="s-section"><div class="s-label">共演女優（2人）</div><div class="tag-list"><span class="tag">一宮るい</span><a class="tag costar-link" href="actress-1101655.html">天神羽衣</a></div></div>
+    <div class="s-section"><button class="clear-link" id="clearAll">すべてクリア</button></div>
+  </aside>
+  <div class="main-wrap">
+    <div class="chips" id="chips"></div>
+    <div class="works-grid" id="grid">
+
+    <div class="work-card"
+         data-title="実家の母の味を思い出させる定食屋の主人に裏切られ 閉店後の店内で好き勝手もてあそばれてしまう 不慣れな一人暮らしでホームシックにかかった新卒OL（22）天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,淫乱・ハード系,イラマチオ,中出し,OL,スレンダー"
+         data-directors="きとるね川口"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00618&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00618/1start00618pl.jpg" alt="実家の母の味を思い出させる定食屋の主人に裏切られ 閉店後の店内で好き勝手もてあそばれてしまう 不慣れな一人暮らしでホームシックにかかった新卒OL（22）天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00618&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">実家の母の味を思い出させる定食屋の主人に裏切られ 閉店後の店内で好き勝手もてあそばれてしまう 不慣れな一人暮らしでホームシックにかかった新卒OL（22）天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-08-11</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>きとるね川口</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00618</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('淫乱・ハード系')">淫乱・ハード系</span><span class="g-tag clickable-gtag" onclick="filterGenre('イラマチオ')">イラマチオ</span><span class="g-tag clickable-gtag" onclick="filterGenre('中出し')">中出し</span><span class="g-tag clickable-gtag" onclick="filterGenre('OL')">OL</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00618&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="お客さまファーストのホテルマンが客の俺を出禁にするなんて許さない 洗脳エステで俺の思い通りにしてやる！ 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,淫語,中出し,OL,放尿・お漏らし,スレンダー"
+         data-directors="小松セブンティーン"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00606&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00606/1start00606pl.jpg" alt="お客さまファーストのホテルマンが客の俺を出禁にするなんて許さない 洗脳エステで俺の思い通りにしてやる！ 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00606&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">お客さまファーストのホテルマンが客の俺を出禁にするなんて許さない 洗脳エステで俺の思い通りにしてやる！ 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-07-14</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>小松セブンティーン</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>洗脳エステ</dd>
+          <dt>品番</dt><dd>1start00606</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('淫語')">淫語</span><span class="g-tag clickable-gtag" onclick="filterGenre('中出し')">中出し</span><span class="g-tag clickable-gtag" onclick="filterGenre('OL')">OL</span><span class="g-tag clickable-gtag" onclick="filterGenre('放尿・お漏らし')">放尿・お漏らし</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00606&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="絶対ヌケる！絶頂の向こう側 ガチでイキすぎ失禁痙攣トランス 泣いてもわめいても容赦なく突き刺す追撃HARDピストン 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,中出し,デカチン・巨根,潮吹き,淫乱・ハード系,スレンダー"
+         data-directors="コスモアタック渡辺"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00583&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00583/1start00583pl.jpg" alt="絶対ヌケる！絶頂の向こう側 ガチでイキすぎ失禁痙攣トランス 泣いてもわめいても容赦なく突き刺す追撃HARDピストン 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00583&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">絶対ヌケる！絶頂の向こう側 ガチでイキすぎ失禁痙攣トランス 泣いてもわめいても容赦なく突き刺す追撃HARDピストン 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-06-09</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>コスモアタック渡辺</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>ガチでイキすぎ失禁痙攣トランス</dd>
+          <dt>品番</dt><dd>1start00583</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('中出し')">中出し</span><span class="g-tag clickable-gtag" onclick="filterGenre('デカチン・巨根')">デカチン・巨根</span><span class="g-tag clickable-gtag" onclick="filterGenre('潮吹き')">潮吹き</span><span class="g-tag clickable-gtag" onclick="filterGenre('淫乱・ハード系')">淫乱・ハード系</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00583&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="いいなり温泉旅行 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,淫乱・ハード系,拘束,スレンダー,和服・浴衣,温泉"
+         data-directors="小松セブンティーン"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00572&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00572/1start00572pl.jpg" alt="いいなり温泉旅行 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00572&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">いいなり温泉旅行 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-05-12</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>小松セブンティーン</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>いいなり温泉旅行</dd>
+          <dt>品番</dt><dd>1start00572</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('淫乱・ハード系')">淫乱・ハード系</span><span class="g-tag clickable-gtag" onclick="filterGenre('拘束')">拘束</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span><span class="g-tag clickable-gtag" onclick="filterGenre('和服・浴衣')">和服・浴衣</span><span class="g-tag clickable-gtag" onclick="filterGenre('温泉')">温泉</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00572&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="車中不倫 こんなオジサンでも娘の幼なじみ（19）にコクられて付き合うことになっちゃった！年の差なんと31歳！自宅ガレージで唾液を絡ませ汗ダクでちちくりあう 天神羽衣"
+         data-genres="ハイビジョン,4K,単体作品,寝取り・寝取られ・NTR,スレンダー,ドラマ,不倫,カーセックス"
+         data-directors="太宰珍歩"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00552&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00552/1start00552pl.jpg" alt="車中不倫 こんなオジサンでも娘の幼なじみ（19）にコクられて付き合うことになっちゃった！年の差なんと31歳！自宅ガレージで唾液を絡ませ汗ダクでちちくりあう 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00552&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">車中不倫 こんなオジサンでも娘の幼なじみ（19）にコクられて付き合うことになっちゃった！年の差なんと31歳！自宅ガレージで唾液を絡ませ汗ダクでちちくりあう 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-04-14</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>太宰珍歩</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00552</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('寝取り・寝取られ・NTR')">寝取り・寝取られ・NTR</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドラマ')">ドラマ</span><span class="g-tag clickable-gtag" onclick="filterGenre('不倫')">不倫</span><span class="g-tag clickable-gtag" onclick="filterGenre('カーセックス')">カーセックス</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00552&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="【VR】【8K】最近付き合った彼女と布団の中でダラダラセックスする怠惰な土曜の夜 天神羽衣初 VR"
+         data-genres="ハイクオリティVR,8KVR,単体作品,VR専用,キス・接吻,手コキ,フェラ,カップル,騎乗位"
+         data-directors="矢澤レシーブ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D13dsvr01947&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/13dsvr01947/13dsvr01947pl.jpg" alt="【VR】【8K】最近付き合った彼女と布団の中でダラダラセックスする怠惰な土曜の夜 天神羽衣初 VR" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D13dsvr01947&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">【VR】【8K】最近付き合った彼女と布団の中でダラダラセックスする怠惰な土曜の夜 天神羽衣初 VR</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-04-02</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>矢澤レシーブ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>13dsvr01947</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイクオリティVR')">ハイクオリティVR</span><span class="g-tag clickable-gtag" onclick="filterGenre('8KVR')">8KVR</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('VR専用')">VR専用</span><span class="g-tag clickable-gtag" onclick="filterGenre('キス・接吻')">キス・接吻</span><span class="g-tag clickable-gtag" onclick="filterGenre('手コキ')">手コキ</span><span class="g-tag clickable-gtag" onclick="filterGenre('フェラ')">フェラ</span><span class="g-tag clickable-gtag" onclick="filterGenre('カップル')">カップル</span><span class="g-tag clickable-gtag" onclick="filterGenre('騎乗位')">騎乗位</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D13dsvr01947&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="【特典版】人生初のナマ中出し解禁 天神羽衣"
+         data-genres="4K,ハイビジョン,ドキュメンタリー,ローション・オイル,3P・4P,中出し,単体作品"
+         data-directors="小松セブンティーン"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00527v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00527v/1start00527vpl.jpg" alt="【特典版】人生初のナマ中出し解禁 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00527v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">【特典版】人生初のナマ中出し解禁 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-03-10</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>小松セブンティーン</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>初中出し解禁</dd>
+          <dt>品番</dt><dd>1start00527v</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('ローション・オイル')">ローション・オイル</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('中出し')">中出し</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00527v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="人生初のナマ中出し解禁 天神羽衣"
+         data-genres="4K,ハイビジョン,ドキュメンタリー,ローション・オイル,3P・4P,中出し,単体作品"
+         data-directors="小松セブンティーン"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00527&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00527/1start00527pl.jpg" alt="人生初のナマ中出し解禁 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00527&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">人生初のナマ中出し解禁 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-03-10</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>小松セブンティーン</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>初中出し解禁</dd>
+          <dt>品番</dt><dd>1start00527</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('ローション・オイル')">ローション・オイル</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('中出し')">中出し</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00527&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="「筋肉触ってもいいですか…？」汗ダクの男臭いマッチョに発情し即雌化。トレーナー達を裏で舐め喰いまくる欲求不満アイドルの実態 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,筋肉,潮吹き,3P・4P,スレンダー,アイドル・芸能人"
+         data-directors="チク兄"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00514&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00514/1start00514pl.jpg" alt="「筋肉触ってもいいですか…？」汗ダクの男臭いマッチョに発情し即雌化。トレーナー達を裏で舐め喰いまくる欲求不満アイドルの実態 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00514&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">「筋肉触ってもいいですか…？」汗ダクの男臭いマッチョに発情し即雌化。トレーナー達を裏で舐め喰いまくる欲求不満アイドルの実態 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-02-10</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>チク兄</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00514</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('筋肉')">筋肉</span><span class="g-tag clickable-gtag" onclick="filterGenre('潮吹き')">潮吹き</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span><span class="g-tag clickable-gtag" onclick="filterGenre('アイドル・芸能人')">アイドル・芸能人</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00514&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="3親等NTR じつの叔父とのアウトな関係を同級生の彼氏から勘ぐられようと完全無視 ただひたすらオジとハメまくった姪っ子ちゃん うい（19） 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,顔射,ハメ撮り,女子大生,美少女,スレンダー"
+         data-directors="スケザネヘイタ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00495&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00495/1start00495pl.jpg" alt="3親等NTR じつの叔父とのアウトな関係を同級生の彼氏から勘ぐられようと完全無視 ただひたすらオジとハメまくった姪っ子ちゃん うい（19） 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00495&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">3親等NTR じつの叔父とのアウトな関係を同級生の彼氏から勘ぐられようと完全無視 ただひたすらオジとハメまくった姪っ子ちゃん うい（19） 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2026-01-13</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>スケザネヘイタ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00495</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('顔射')">顔射</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハメ撮り')">ハメ撮り</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00495&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="伊豆温泉を訪れた天神羽衣ちゃん（21）タオル一枚男湯入ってみませんか？HARD"
+         data-genres="4K,単体作品,ハイビジョン,スレンダー,乱交,野外・露出,羞恥,温泉"
+         data-directors="CHAIN宗"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00474&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00474/1start00474pl.jpg" alt="伊豆温泉を訪れた天神羽衣ちゃん（21）タオル一枚男湯入ってみませんか？HARD" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00474&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">伊豆温泉を訪れた天神羽衣ちゃん（21）タオル一枚男湯入ってみませんか？HARD</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-12-23</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>CHAIN宗</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>タオル一枚男湯入ってみませんか？</dd>
+          <dt>品番</dt><dd>1start00474</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span><span class="g-tag clickable-gtag" onclick="filterGenre('乱交')">乱交</span><span class="g-tag clickable-gtag" onclick="filterGenre('野外・露出')">野外・露出</span><span class="g-tag clickable-gtag" onclick="filterGenre('羞恥')">羞恥</span><span class="g-tag clickable-gtag" onclick="filterGenre('温泉')">温泉</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00474&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="【特典版】同期のSODSTAR新人天神羽衣と一宮るいが1日SOD女子社員 AV撮影の準備や企画会議など業務体験中にデカチンを即ハメされまくり！人生最大の羞恥に赤面しっぱなし！"
+         data-genres="4K,ハイビジョン,乱交,潮吹き,OL,羞恥,即ハメ"
+         data-directors="ダイナナ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣,一宮るい">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00475v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00475v/1start00475vpl.jpg" alt="【特典版】同期のSODSTAR新人天神羽衣と一宮るいが1日SOD女子社員 AV撮影の準備や企画会議など業務体験中にデカチンを即ハメされまくり！人生最大の羞恥に赤面しっぱなし！" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00475v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">【特典版】同期のSODSTAR新人天神羽衣と一宮るいが1日SOD女子社員 AV撮影の準備や企画会議など業務体験中にデカチンを即ハメされまくり！人生最大の羞恥に赤面しっぱなし！</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-12-09</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣、一宮るい</dd>
+          <dt>監督</dt><dd>ダイナナ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>1日SOD女子社員</dd>
+          <dt>品番</dt><dd>1start00475v</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('乱交')">乱交</span><span class="g-tag clickable-gtag" onclick="filterGenre('潮吹き')">潮吹き</span><span class="g-tag clickable-gtag" onclick="filterGenre('OL')">OL</span><span class="g-tag clickable-gtag" onclick="filterGenre('羞恥')">羞恥</span><span class="g-tag clickable-gtag" onclick="filterGenre('即ハメ')">即ハメ</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00475v&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="同期のSODSTAR新人天神羽衣と一宮るいが1日SOD女子社員 AV撮影の準備や企画会議など業務体験中にデカチンを即ハメされまくり！人生最大の羞恥に赤面しっぱなし！"
+         data-genres="4K,ハイビジョン,乱交,潮吹き,OL,羞恥,即ハメ"
+         data-directors="ダイナナ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣,一宮るい">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00475&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00475/1start00475pl.jpg" alt="同期のSODSTAR新人天神羽衣と一宮るいが1日SOD女子社員 AV撮影の準備や企画会議など業務体験中にデカチンを即ハメされまくり！人生最大の羞恥に赤面しっぱなし！" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00475&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">同期のSODSTAR新人天神羽衣と一宮るいが1日SOD女子社員 AV撮影の準備や企画会議など業務体験中にデカチンを即ハメされまくり！人生最大の羞恥に赤面しっぱなし！</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-12-09</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣、一宮るい</dd>
+          <dt>監督</dt><dd>ダイナナ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>1日SOD女子社員</dd>
+          <dt>品番</dt><dd>1start00475</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('乱交')">乱交</span><span class="g-tag clickable-gtag" onclick="filterGenre('潮吹き')">潮吹き</span><span class="g-tag clickable-gtag" onclick="filterGenre('OL')">OL</span><span class="g-tag clickable-gtag" onclick="filterGenre('羞恥')">羞恥</span><span class="g-tag clickable-gtag" onclick="filterGenre('即ハメ')">即ハメ</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00475&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="上京して入居した激安シェアハウスの同居人が全員強漢魔 ダマされて入った男だらけの相部屋で毎日性欲処理させられる突起乳首がヤラしいスレンダー美人女子大生 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,3P・4P,ドラマ,女子大生,美少女,スレンダー"
+         data-directors="木村浩之"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00459&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00459/1start00459pl.jpg" alt="上京して入居した激安シェアハウスの同居人が全員強漢魔 ダマされて入った男だらけの相部屋で毎日性欲処理させられる突起乳首がヤラしいスレンダー美人女子大生 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00459&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">上京して入居した激安シェアハウスの同居人が全員強漢魔 ダマされて入った男だらけの相部屋で毎日性欲処理させられる突起乳首がヤラしいスレンダー美人女子大生 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-11-18</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>木村浩之</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00459</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドラマ')">ドラマ</span><span class="g-tag clickable-gtag" onclick="filterGenre('女子大生')">女子大生</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00459&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="体液ズブ濡れでよがりイク極上のカラダ 汗・潮・涎全ての天神汁を味わい堪能する5CORNER 天神羽衣"
+         data-genres="4K,単体作品,ハイビジョン,美少女,汗だく,潮吹き,淫乱・ハード系,スレンダー"
+         data-directors="矢澤レシーブ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00441&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00441/1start00441pl.jpg" alt="体液ズブ濡れでよがりイク極上のカラダ 汗・潮・涎全ての天神汁を味わい堪能する5CORNER 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00441&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">体液ズブ濡れでよがりイク極上のカラダ 汗・潮・涎全ての天神汁を味わい堪能する5CORNER 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-10-21</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>矢澤レシーブ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>全ての●●汁を味わい堪能する5CORNER</dd>
+          <dt>品番</dt><dd>1start00441</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('汗だく')">汗だく</span><span class="g-tag clickable-gtag" onclick="filterGenre('潮吹き')">潮吹き</span><span class="g-tag clickable-gtag" onclick="filterGenre('淫乱・ハード系')">淫乱・ハード系</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00441&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="Ui 太陽に照らされて・天神羽衣"
+         data-genres="ハイビジョン,単体作品,巨乳,セクシー"
+         data-directors="あおのゆうこ"
+         data-maker="REbecca"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_346rebd00975&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/h_346rebd00975/h_346rebd00975pl.jpg" alt="Ui 太陽に照らされて・天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_346rebd00975&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">Ui 太陽に照らされて・天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-10-02</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>あおのゆうこ</dd>
+          <dt>メーカー</dt><dd>REbecca</dd>
+          
+          <dt>品番</dt><dd>h_346rebd00975</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('巨乳')">巨乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('セクシー')">セクシー</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_346rebd00975&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="最近入ってきたバイトの新人がいつも俺をからかってくる。業務中の大胆な挑発チラリズムに耐え切れず、手を出してしまい…時給を上げざるを得ない！ 天神羽衣"
+         data-genres="4K,ハイビジョン,胸チラ,職業色々,フェラ,ドラマ,単体作品"
+         data-directors="ザック荒井"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00427&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00427/1start00427pl.jpg" alt="最近入ってきたバイトの新人がいつも俺をからかってくる。業務中の大胆な挑発チラリズムに耐え切れず、手を出してしまい…時給を上げざるを得ない！ 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00427&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">最近入ってきたバイトの新人がいつも俺をからかってくる。業務中の大胆な挑発チラリズムに耐え切れず、手を出してしまい…時給を上げざるを得ない！ 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-09-30</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>ザック荒井</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00427</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('胸チラ')">胸チラ</span><span class="g-tag clickable-gtag" onclick="filterGenre('職業色々')">職業色々</span><span class="g-tag clickable-gtag" onclick="filterGenre('フェラ')">フェラ</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドラマ')">ドラマ</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00427&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="福岡から上京したての天神ちゃんが人生初の東京遊び！ようと出てくるバリエロい博多淫語で東京M男を何度も射精させちゃった！ 天神羽衣"
+         data-genres="4K,ハイビジョン,M男,デート,ドキュメンタリー,淫語,単体作品"
+         data-directors="さもあり"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00408&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00408/1start00408pl.jpg" alt="福岡から上京したての天神ちゃんが人生初の東京遊び！ようと出てくるバリエロい博多淫語で東京M男を何度も射精させちゃった！ 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00408&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">福岡から上京したての天神ちゃんが人生初の東京遊び！ようと出てくるバリエロい博多淫語で東京M男を何度も射精させちゃった！ 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-08-26</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>さもあり</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00408</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('M男')">M男</span><span class="g-tag clickable-gtag" onclick="filterGenre('デート')">デート</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('淫語')">淫語</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00408&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="絶頂開発 小柄な敏感BODYをガクブル震わせながらジブン史上最高の激イキ！巨根大絶頂 天神羽衣"
+         data-genres="ハイビジョン,4K,3P・4P,おもちゃ,潮吹き,デカチン・巨根,単体作品"
+         data-directors="ダイナナ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00378&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00378/1start00378pl.jpg" alt="絶頂開発 小柄な敏感BODYをガクブル震わせながらジブン史上最高の激イキ！巨根大絶頂 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00378&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">絶頂開発 小柄な敏感BODYをガクブル震わせながらジブン史上最高の激イキ！巨根大絶頂 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-07-15</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>ダイナナ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>巨根大絶頂</dd>
+          <dt>品番</dt><dd>1start00378</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('おもちゃ')">おもちゃ</span><span class="g-tag clickable-gtag" onclick="filterGenre('潮吹き')">潮吹き</span><span class="g-tag clickable-gtag" onclick="filterGenre('デカチン・巨根')">デカチン・巨根</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00378&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="博多っ子、発情。チ〇ポでイッでみたい福岡女子を1日かけてゲリラ性感開発。東京で開発3本番初イキドキュメント。 天神羽衣"
+         data-genres="アクメ・オーガズム,4K,ハイビジョン,3P・4P,単体作品,ドキュメンタリー,美少女"
+         data-directors="矢澤レシーブ"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00358&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00358/1start00358pl.jpg" alt="博多っ子、発情。チ〇ポでイッでみたい福岡女子を1日かけてゲリラ性感開発。東京で開発3本番初イキドキュメント。 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00358&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">博多っ子、発情。チ〇ポでイッでみたい福岡女子を1日かけてゲリラ性感開発。東京で開発3本番初イキドキュメント。 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-06-17</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>矢澤レシーブ</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00358</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('アクメ・オーガズム')">アクメ・オーガズム</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('3P・4P')">3P・4P</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00358&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="福岡で一番エロくて愛される女優になるために、福岡在住の素人男性宅に突撃訪問！初々しい羽衣ちゃんを発射無制限でデリバリー！ 天神羽衣"
+         data-genres="4K,ハイビジョン,騎乗位,美少女,素人,ドキュメンタリー,単体作品"
+         data-directors="井上ジャパン"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00343&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00343/1start00343pl.jpg" alt="福岡で一番エロくて愛される女優になるために、福岡在住の素人男性宅に突撃訪問！初々しい羽衣ちゃんを発射無制限でデリバリー！ 天神羽衣" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00343&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">福岡で一番エロくて愛される女優になるために、福岡在住の素人男性宅に突撃訪問！初々しい羽衣ちゃんを発射無制限でデリバリー！ 天神羽衣</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-05-20</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>井上ジャパン</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          
+          <dt>品番</dt><dd>1start00343</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('騎乗位')">騎乗位</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('素人')">素人</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00343&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="今、福岡で一番かわうい博多っ娘 天神羽衣（20）"
+         data-genres="4K,ハイビジョン,ハメ撮り,ドキュメンタリー,素人,美少女,単体作品"
+         data-directors="こくもく"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1stzy00017&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1stzy00017/1stzy00017pl.jpg" alt="今、福岡で一番かわうい博多っ娘 天神羽衣（20）" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1stzy00017&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">今、福岡で一番かわうい博多っ娘 天神羽衣（20）</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-04-29</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>こくもく</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>AVデビュー前の秘蔵映像公開！</dd>
+          <dt>品番</dt><dd>1stzy00017</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハメ撮り')">ハメ撮り</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('素人')">素人</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1stzy00017&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+    <div class="work-card"
+         data-title="今、福岡で1番エロくて可愛い女の子を鮮度100％で産地直送！糸島生まれの地元愛溢れる次世代スター！ 天神羽衣 AV DEBUT"
+         data-genres="ハイビジョン,4K,ドキュメンタリー,美少女,素人,デビュー作品,単体作品"
+         data-directors="井上ジャパン"
+         data-maker="SODクリエイト"
+         data-actresses="天神羽衣">
+      <div class="w-thumb">
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00323&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/1start00323/1start00323pl.jpg" alt="今、福岡で1番エロくて可愛い女の子を鮮度100％で産地直送！糸島生まれの地元愛溢れる次世代スター！ 天神羽衣 AV DEBUT" loading="lazy"></a>
+      </div>
+      <div class="w-body">
+        <div class="w-title">
+          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00323&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">今、福岡で1番エロくて可愛い女の子を鮮度100％で産地直送！糸島生まれの地元愛溢れる次世代スター！ 天神羽衣 AV DEBUT</a>
+        </div>
+        <dl class="w-meta">
+          <dt>配信日</dt><dd>2025-04-15</dd>
+          <dt>収録時間</dt><dd>—</dd>
+          <dt>出演女優</dt><dd>天神羽衣</dd>
+          <dt>監督</dt><dd>井上ジャパン</dd>
+          <dt>メーカー</dt><dd>SODクリエイト</dd>
+          <dt>シリーズ</dt><dd>AV DEBUT(STAR)</dd>
+          <dt>品番</dt><dd>1start00323</dd>
+        </dl>
+        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4K')">4K</span><span class="g-tag clickable-gtag" onclick="filterGenre('ドキュメンタリー')">ドキュメンタリー</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('素人')">素人</span><span class="g-tag clickable-gtag" onclick="filterGenre('デビュー作品')">デビュー作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('単体作品')">単体作品</span></div>
+        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3D1start00323&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
+      </div>
+    </div>
+      <div class="empty" id="emptyMsg" style="display:none">該当作品がありませんでした</div>
+    </div>
+  </div>
+</div>
+<footer style="text-align:center;padding:24px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);margin-top:20px">
+  当サイトはアフィリエイトリンクを含みます。© 2025 巨乳・爆乳好きのまとめサイト<br><br>
+  <a href="https://affiliate.dmm.com/api/"><img src="https://p.dmm.co.jp/p/affiliate/web_service/r18_135_17.gif" width="135" height="17" alt="WEB SERVICE BY FANZA"></a>
+</footer>
+<script>
+const cards   = document.querySelectorAll(".work-card");
+const selected = { genre: new Set(), director: new Set(), maker: new Set(), actress: new Set() };
+let titleQuery = "";
+
+function applyFilter() {
+  let count = 0;
+  cards.forEach(card => {
+    const ok =
+      (!titleQuery || (card.dataset.title||"").includes(titleQuery)) &&
+      (selected.genre.size    === 0 || [...selected.genre   ].every(v => (card.dataset.genres   ||"").split(",").includes(v))) &&
+      (selected.director.size === 0 || [...selected.director].every(v => (card.dataset.directors||"").split(",").includes(v))) &&
+      (selected.maker.size    === 0 || selected.maker.has(card.dataset.maker||"")) &&
+      (selected.actress.size  === 0 || [...selected.actress ].every(v => (card.dataset.actresses||"").split(",").includes(v)));
+    card.classList.toggle("hidden", !ok);
+    if (ok) count++;
+  });
+  document.getElementById("countDisplay").textContent = count + " 件";
+  document.getElementById("emptyMsg").style.display   = count === 0 ? "block" : "none";
+  renderChips();
+}
+
+function renderChips() {
+  const el = document.getElementById("chips");
+  el.innerHTML = "";
+  Object.entries(selected).forEach(([kind, set]) => {
+    set.forEach(val => {
+      const c = document.createElement("span");
+      c.className = "chip";
+      c.innerHTML = val + ` <button onclick="removeFilter('${kind}','${val}')">×</button>`;
+      el.appendChild(c);
+    });
+  });
+}
+
+document.querySelectorAll(".tag[data-kind]").forEach(el => {
+  el.onclick = () => {
+    const kind = el.dataset.kind, val = el.dataset.val;
+    selected[kind].has(val) ? selected[kind].delete(val) : selected[kind].add(val);
+    el.classList.toggle("active");
+    applyFilter();
+  };
+});
+
+window.filterGenre = (g) => {
+  selected.genre.add(g);
+  document.querySelector(`.tag[data-kind="genre"][data-val="${g}"]`)?.classList.add("active");
+  applyFilter();
+};
+
+document.getElementById("titleSearch").oninput = e => { titleQuery = e.target.value.trim(); applyFilter(); };
+document.getElementById("clearAll").onclick = () => {
+  Object.values(selected).forEach(s => s.clear());
+  titleQuery = "";
+  document.getElementById("titleSearch").value = "";
+  document.querySelectorAll(".tag.active").forEach(t => t.classList.remove("active"));
+  applyFilter();
+};
+
+window.removeFilter = (kind, val) => {
+  selected[kind].delete(val);
+  document.querySelector(`.tag[data-kind="${kind}"][data-val="${val}"]`)?.classList.remove("active");
+  applyFilter();
+};
+
+window.toggleCostar = () => {
+  const hidden = document.getElementById("costar_hidden");
+  const btn    = document.getElementById("costar_btn");
+  if (!hidden) return;
+  const open = hidden.style.display === "none";
+  hidden.style.display = open ? "" : "none";
+  btn.textContent = open
+    ? "▲ 閉じる"
+    : "+ " + hidden.querySelectorAll(".tag").length + "人 もっと見る";
+};
+
+applyFilter();
+</script>
+</body>
+</html>
