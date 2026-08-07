@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<title>免責事項・画像について | 巨乳・爆乳好きのまとめサイト</title>
+<style>{
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0d0d;--bg2:#161616;--bg3:#1e1e1e;--bg4:#252525;
+  --border:#2a2a2a;--border2:#333;
+  --text:#f0f0f0;--text2:#aaa;--muted:#555;
+  --red:#e63946;--red2:#c1121f;--red-bg:rgba(230,57,70,.12);--red-border:rgba(230,57,70,.3);
+  --radius:8px;--radius2:12px;
+}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+  background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+/* HEADER */
+header{background:rgba(13,13,13,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:0 24px;
+  display:flex;align-items:center;gap:16px;height:56px;
+  position:sticky;top:0;z-index:200}
+.logo{font-size:17px;font-weight:800;letter-spacing:-.5px;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--red)}
+.logo a{color:inherit}
+.h-search{flex:1;max-width:320px;background:var(--bg3);
+  border:1px solid var(--border2);border-radius:20px;
+  color:var(--text);font-size:13px;padding:7px 14px;outline:none;transition:.2s}
+.h-search:focus{border-color:var(--red);background:var(--bg4)}
+.h-count{margin-left:auto;font-size:12px;color:var(--muted);white-space:nowrap}
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 56px)}
+aside{background:var(--bg2);border-right:1px solid var(--border);
+  padding:20px 14px;overflow-y:auto;position:sticky;top:56px;height:calc(100vh - 56px)}
+.s-section{margin-bottom:22px}
+.s-label{font-size:10px;font-weight:700;color:var(--muted);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;
+  display:flex;align-items:center;gap:6px}
+.s-label::before{content:"";display:inline-block;width:3px;height:11px;
+  background:var(--red);border-radius:2px}
+/* TAGS */
+.tag-list{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;padding:4px 10px;border-radius:20px;
+  border:1px solid var(--border2);background:var(--bg3);color:var(--text2);
+  cursor:pointer;user-select:none;transition:all .15s;white-space:nowrap}
+.tag:hover{border-color:var(--red-border);color:var(--text);background:var(--bg4)}
+.tag.active{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.clear-link{font-size:11px;color:var(--muted);background:none;
+  border:none;cursor:pointer;padding:0;text-decoration:underline;transition:.15s}
+.clear-link:hover{color:var(--text)}
+/* CHIPS */
+.main-wrap{padding:20px 24px;overflow-y:auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;min-height:0}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;
+  background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);
+  border-radius:20px;font-weight:500}
+.chip button{background:none;border:none;color:var(--red);cursor:pointer;
+  font-size:14px;line-height:1;padding:0;opacity:.8}
+.chip button:hover{opacity:1}
+/* BUST SLIDER */
+.bust-slider-wrap{padding:4px 2px}
+.bust-range-labels{display:flex;justify-content:space-between;
+  font-size:12px;font-weight:700;color:var(--text);margin-bottom:12px}
+.bust-range-labels span{background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);padding:3px 10px;border-radius:12px;min-width:56px;text-align:center}
+.slider-track{position:relative;height:4px;background:var(--bg4);
+  border-radius:2px;margin:16px 0 8px}
+.slider-fill{position:absolute;height:100%;background:var(--red);border-radius:2px;transition:.05s}
+.slider-track input[type=range]{position:absolute;width:100%;height:100%;
+  opacity:0;cursor:pointer;margin:0;top:0;left:0;pointer-events:none}
+.slider-track input[type=range]::-webkit-slider-thumb{pointer-events:all;
+  width:20px;height:20px;border-radius:50%;background:var(--red);
+  -webkit-appearance:none;cursor:pointer;box-shadow:0 0 0 4px var(--red-bg),0 0 0 2px var(--red)}
+.slider-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+/* MORE BTN */
+.more-btn{display:block;width:100%;margin-top:8px;padding:5px;text-align:center;
+  font-size:11px;cursor:pointer;border:1px solid var(--border2);
+  background:var(--bg3);color:var(--text2);border-radius:6px;transition:.15s}
+.more-btn:hover{border-color:var(--red-border);color:var(--red)}
+/* PICKUP */
+.pickup-section{margin-bottom:32px}
+.pickup-header{font-size:11px;font-weight:700;color:var(--red);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px}
+.pickup-header::before,.pickup-header::after{content:"";flex:1;height:1px;background:var(--red-border)}
+.pickup-card{border-color:var(--red-border) !important}
+.pickup-badge{position:absolute;top:8px;left:8px;font-size:9px;font-weight:700;
+  padding:3px 8px;border-radius:12px;background:var(--red);color:#fff;z-index:1;letter-spacing:.05em}
+/* KANA SECTION */
+.kana-section{margin-bottom:28px}
+.kana-header{font-size:12px;font-weight:700;color:var(--text2);
+  padding:5px 12px;margin-bottom:14px;
+  border-left:3px solid var(--red);background:var(--bg2);
+  border-radius:0 6px 6px 0;letter-spacing:.05em}
+.kana-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.row-more-btn{display:block;width:100%;margin-top:12px;padding:8px;text-align:center;
+  font-size:12px;font-weight:500;cursor:pointer;
+  border:1px solid var(--border2);background:var(--bg2);
+  color:var(--text2);border-radius:var(--radius);transition:.15s}
+.row-more-btn:hover{border-color:var(--red-border);color:var(--red)}
+/* ACTRESS GRID */
+.actress-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+.actress-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius2);
+  overflow:hidden;display:block;transition:all .2s;position:relative}
+.actress-card:hover{border-color:var(--red-border);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.a-thumb{width:100%;aspect-ratio:3/4;background:var(--bg3);overflow:hidden;position:relative}
+.a-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.actress-card:hover .a-thumb img{transform:scale(1.05)}
+.no-photo{width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;font-size:36px;opacity:.2}
+.a-body{padding:10px 12px 12px}
+.a-name{font-size:13px;font-weight:700;margin-bottom:3px}
+.a-size{font-size:10px;color:var(--muted);margin-bottom:5px}
+.a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:10px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.a-count{font-size:10px;color:var(--muted);margin-top:5px}
+/* ACTRESS HERO */
+.breadcrumb{font-size:12px;color:var(--muted);padding:10px 24px;
+  background:var(--bg2);border-bottom:1px solid var(--border)}
+.breadcrumb a{color:var(--red)}
+.actress-hero{padding:24px;background:var(--bg2);
+  border-bottom:1px solid var(--border);display:flex;gap:18px;align-items:flex-start}
+.hero-img{width:80px;height:107px;object-fit:cover;border-radius:var(--radius);
+  background:var(--bg3);flex-shrink:0}
+.hero-name{font-size:22px;font-weight:800;margin-bottom:5px}
+.hero-name span{color:var(--red)}
+.hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
+.hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
+  border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+/* COSTAR */
+.costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
+  background:var(--red-bg) !important;text-decoration:none;display:inline-block}
+.costar-link:hover{background:rgba(230,57,70,.22) !important}
+/* WORK GRID */
+.works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.work-card{background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--radius2);overflow:hidden;transition:all .2s}
+.work-card:hover{border-color:var(--border2);transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.work-card.hidden{display:none}
+.w-thumb{width:100%;aspect-ratio:16/11;background:var(--bg3);overflow:hidden}
+.w-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.work-card:hover .w-thumb img{transform:scale(1.04)}
+.no-img{width:100%;height:100%;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);font-size:12px}
+.w-body{padding:11px 13px 13px}
+.w-title{font-size:13px;font-weight:600;margin-bottom:8px;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.w-title a:hover{color:var(--red)}
+.w-meta{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;font-size:11px;margin-bottom:8px}
+.w-meta dt{color:var(--muted);white-space:nowrap}
+.w-meta dd{color:var(--text2)}
+.g-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.g-tag{font-size:10px;padding:3px 8px;border-radius:10px;
+  background:var(--bg3);color:var(--text2);border:1px solid var(--border);
+  cursor:pointer;transition:.15s}
+.g-tag:hover{border-color:var(--red-border);color:var(--red)}
+.g-tag.active{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.btn-fanza{display:block;text-align:center;font-size:12px;font-weight:700;
+  padding:8px;border-radius:var(--radius);letter-spacing:.04em;
+  border:none;color:#fff;background:var(--red2);transition:.15s}
+.btn-fanza:hover{background:var(--red)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:13px}
+footer{text-align:center;padding:28px 24px;font-size:11px;
+  color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
+}
+.nw{max-width:720px;margin:40px auto;padding:0 24px 60px}
+.nh1{font-size:20px;font-weight:700;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.nb{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:16px}
+.nb h2{font-size:14px;font-weight:700;color:var(--red);margin-bottom:10px;padding-left:10px;border-left:3px solid var(--red)}
+.nb p,.nb ul{font-size:13px;color:var(--text2);line-height:1.9}
+.nb ul{padding-left:18px}
+.nb ul li{margin-bottom:8px}
+.nb strong{color:var(--text);font-weight:600}
+</style>
+</head>
+<body>
+<header><div class='logo'><a href='index.html'>巨乳・爆乳<span>まとめ</span></a></div></header>
+<div class='nw'>
+  <div class='nh1'>免責事項・画像表示と削除について</div>
+  <div class='nb'><h2>画像の表示方式について</h2><ul>
+    <li><strong>当サイトでは作品画像を一切保持していません。</strong><br>当サイトのサーバー内には、掲載されている作品画像を1つも保存しておりません。</li>
+    <li><strong>すべての画像は直リンクで表示しています。</strong><br>掲載している作品画像はすべて、提供元サーバーから直接読み込む形式で表示しています。</li>
+    <li><strong>元サイトで削除された画像は表示されなくなります。</strong><br>画像の管理権限はリンク先サイト様にあります。元サイトで削除・変更された場合、当サイトでも自動的に表示されなくなります。</li>
+  </ul></div>
+  <div class='nb'><h2>アフィリエイトリンクについて</h2><p>当サイトはFANZAアフィリエイトプログラムに参加しています。当サイト経由でご購入いただいた場合、当サイトに紹介料が発生することがあります。</p></div>
+  <div class='nb'><h2>18歳未満の方へ</h2><p>当サイトはアダルトコンテンツを含みます。18歳未満の方はアクセスをお断りします。</p></div>
+  <div class='nb'><h2>免責事項</h2><p>当サイトの情報は参考目的で提供しており、内容の正確性・完全性を保証するものではありません。当サイトのご利用により生じた損害について、運営者は一切の責任を負いません。</p></div>
+  <div class='nb'><h2>著作権について</h2><p>掲載している作品情報・画像の著作権は各メーカー・制作会社に帰属します。無断転載・複製はお断りします。</p></div>
+  <div class='nb'><h2>削除依頼について</h2><p>掲載内容に問題がある場合は、各販売サイトの公式窓口へご連絡ください。元サイトで削除された情報は当サイトにも自動的に反映されます。</p></div>
+</div>
+<footer style='text-align:center;padding:24px;font-size:11px;color:var(--muted);border-top:1px solid var(--border)'>
+  © 2025 巨乳・爆乳好きのまとめサイト<br><br>{credit}
+</footer>
+</body></html>
