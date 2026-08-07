@@ -129,6 +129,11 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 .hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
 .hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
   border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.editor-comment{margin-top:10px;padding:10px 12px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.7;max-width:460px}
+.editor-label{display:block;font-size:10px;font-weight:700;color:var(--red);
+  letter-spacing:.1em;margin-bottom:4px}
 /* COSTAR */
 .costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
   background:var(--red-bg) !important;text-decoration:none;display:inline-block}
@@ -166,19 +171,79 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 footer{text-align:center;padding:28px 24px;font-size:11px;
   color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
 
+/* ── SP用フィルターボタン ── */
+.sp-filter-btn{
+  display:none;align-items:center;gap:6px;padding:6px 12px;
+  background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);border-radius:20px;font-size:12px;font-weight:700;
+  cursor:pointer;white-space:nowrap;flex-shrink:0
+}
+.sp-overlay{
+  display:none;position:fixed;inset:0;z-index:299;
+  background:rgba(0,0,0,.6)
+}
+.sp-overlay.open{display:block}
+.sp-close-btn{
+  position:absolute;top:14px;right:14px;
+  background:var(--bg3);border:1px solid var(--border2);
+  color:var(--text2);font-size:20px;width:36px;height:36px;
+  border-radius:50%;cursor:pointer;display:flex;
+  align-items:center;justify-content:center
+}
+
+@media(max-width:768px){
+  .sp-filter-btn{display:flex}
+  .layout{display:block}
+  aside{
+    display:none;position:fixed;left:0;top:0;bottom:0;z-index:300;
+    width:80%;max-width:280px;padding:56px 14px 20px;
+    overflow-y:auto;background:var(--bg2);
+    box-shadow:4px 0 20px rgba(0,0,0,.6)
+  }
+  aside.open{display:block}
+  .main-wrap{padding:12px}
+  .actress-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .kana-grid,.kana-grid-vis{grid-template-columns:repeat(4,1fr);gap:6px}
+  .works-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .a-body{padding:6px 8px 8px}
+  .a-name{font-size:11px}
+  .a-size{font-size:9px}
+  .a-cup{font-size:9px;padding:1px 5px}
+  .a-count{font-size:9px}
+  .w-body{padding:8px 10px 10px}
+  .w-title{font-size:11px}
+  .h-count{display:none}
+  .actress-hero{padding:12px;gap:10px;flex-wrap:wrap}
+  .hero-img{width:56px;height:75px}
+  .hero-name{font-size:16px}
+  .breadcrumb{padding:8px 12px;font-size:11px}
+  .editor-comment{max-width:100%}
+}
+@media(max-width:400px){
+  .actress-grid,.kana-grid,.kana-grid-vis{grid-template-columns:repeat(3,1fr);gap:4px}
+  .works-grid{grid-template-columns:repeat(1,1fr)}
+}
+
 .costar-link{color:var(--red)!important;border-color:rgba(230,57,70,.4)!important;background:rgba(230,57,70,.12)!important;text-decoration:none!important;display:inline-block!important;cursor:pointer!important;pointer-events:auto!important}
 .costar-link:hover{background:rgba(230,57,70,.25)!important}
 .more-btn{display:inline-block;margin-top:6px;cursor:pointer;font-size:11px}
 .clickable-gtag{cursor:pointer;transition:.12s}
 .clickable-gtag:hover{border-color:var(--red-dim);color:var(--text);background:var(--bg2)}
 .a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid var(--red-dim);background:var(--red-bg);color:var(--red);margin-top:3px}
+.editor-comment{margin-top:12px;padding:10px 14px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.8;max-width:460px}
+.editor-label{display:block;font-size:9px;font-weight:700;color:var(--red);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
 </style>
 </head>
 <body>
+<div class="sp-overlay" id="spOverlay" onclick="closeSPFilter()"></div>
 <header>
   <div class="logo"><a href="index.html">巨乳・爆乳<span>まとめ</span></a></div>
   <input class="h-search" id="titleSearch" type="text" placeholder="タイトルで絞り込み...">
   <div class="h-count" id="countDisplay"></div>
+  <button class="sp-filter-btn" onclick="openSPFilter()">☰</button>
 </header>
 <div class="breadcrumb"><a href="index.html">トップ</a> › 石神さとみ</div>
 <div class="actress-hero">
@@ -186,12 +251,14 @@ footer{text-align:center;padding:28px 24px;font-size:11px;
   <div>
     <div class="hero-name"><span>石神さとみ</span> 出演作品まとめ</div>
     <div class="hero-meta">B86 / W54 / H85　<span class="hero-cup">Dカップ</span></div>
-    <div class="hero-meta" style="margin-top:4px">全 10 件 ／ 2026/08/08 02:43 時点</div>
+    <div class="hero-meta" style="margin-top:4px">全 8 件 ／ 2026/08/08 04:11 時点</div>
+    
   </div>
 </div>
 <div class="layout">
-  <aside>
-    <div class="s-section"><div class="s-label">ジャンル</div><div class="tag-list"><span class="tag" data-kind="genre" data-val="3P・4P">3P・4P</span><span class="tag" data-kind="genre" data-val="4時間以上作品">4時間以上作品</span><span class="tag" data-kind="genre" data-val="おもちゃ">おもちゃ</span><span class="tag" data-kind="genre" data-val="アクメ・オーガズム">アクメ・オーガズム</span><span class="tag" data-kind="genre" data-val="スレンダー">スレンダー</span><span class="tag" data-kind="genre" data-val="デビュー作品">デビュー作品</span><span class="tag" data-kind="genre" data-val="ハイビジョン">ハイビジョン</span><span class="tag" data-kind="genre" data-val="バック">バック</span><span class="tag" data-kind="genre" data-val="ベスト・総集編">ベスト・総集編</span><span class="tag" data-kind="genre" data-val="メイド">メイド</span><span class="tag" data-kind="genre" data-val="主観">主観</span><span class="tag" data-kind="genre" data-val="女優ベスト・総集編">女優ベスト・総集編</span><span class="tag" data-kind="genre" data-val="淫乱・ハード系">淫乱・ハード系</span><span class="tag" data-kind="genre" data-val="潮吹き">潮吹き</span><span class="tag" data-kind="genre" data-val="看護婦・ナース">看護婦・ナース</span><span class="tag" data-kind="genre" data-val="競泳・スクール水着">競泳・スクール水着</span><span class="tag" data-kind="genre" data-val="美少女">美少女</span><span class="tag" data-kind="genre" data-val="貧乳・微乳">貧乳・微乳</span></div></div><div class="s-section"><div class="s-label">メーカー</div><div class="tag-list"><span class="tag" data-kind="maker" data-val="マキシング">マキシング</span></div></div><div class="s-section"><div class="s-label">共演女優（50人）</div><div id="costarVis" style="display:flex;flex-wrap:wrap"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">きみの奈津</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">さくらじゅり</span><a href="actress-1034247.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">ひばり乃愛</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">三原ほのか</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">上城りおな</span></div><div id="costarHidden" style="display:none;flex-wrap:wrap;margin-top:4px"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">佐々波りの</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">佐野あおい</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">千葉ねね</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">南條ユナ</span><a href="actress-1029068.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">向井しほ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">咲乃柑菜</span><a href="actress-1040115.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">咲野の花</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">喜多方涼</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">夏乃ひまわり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">大槻ひびき</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">安達莉子</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">小向美奈子</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">小川みちる</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">小西悠</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">川瀬なな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">愛沢かりん</span><a href="actress-1027369.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">木南日菜</a><a href="actress-1042123.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">桃尻かのん</a><a href="actress-1028301.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">桜井ゆづ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">椎名ひかる</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">横山美雪</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">波多野結衣</span><a href="actress-1029615.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">浅尾美羽</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">清水理紗</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">瀬名みづき</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">瀬田奏恵</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">牧瀬みさ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">由愛可奈</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">白石優杞菜</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">白衣ゆき</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">相庭ココ</span><a href="actress-1035005.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">石神さとみ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">神谷瑠里</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">紗凪美羽</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美咲ひな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美涼りな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">葉山瞳</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">西條るり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">陽向さえか</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">雪菜</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">青山はな</span><a href="actress-1030604.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">香純ゆい</a><a href="actress-1036236.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">高井ルナ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">麻生希</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">黒宮えいみ</span></div><button id="costarBtn" onclick="toggleCostarList()" style="display:block;width:100%;margin-top:8px;padding:6px;text-align:center;font-size:11px;cursor:pointer;border:1px solid #333;background:#1e1e1e;color:#aaa;border-radius:6px">+ 45人 もっと見る</button></div>
+  <aside id="spAside">
+    <button class="sp-close-btn" onclick="closeSPFilter()">×</button>
+    <div class="s-section"><div class="s-label">ジャンル</div><div class="tag-list"><span class="tag" data-kind="genre" data-val="3P・4P">3P・4P</span><span class="tag" data-kind="genre" data-val="4時間以上作品">4時間以上作品</span><span class="tag" data-kind="genre" data-val="おもちゃ">おもちゃ</span><span class="tag" data-kind="genre" data-val="アクメ・オーガズム">アクメ・オーガズム</span><span class="tag" data-kind="genre" data-val="デビュー作品">デビュー作品</span><span class="tag" data-kind="genre" data-val="ハイビジョン">ハイビジョン</span><span class="tag" data-kind="genre" data-val="バック">バック</span><span class="tag" data-kind="genre" data-val="ベスト・総集編">ベスト・総集編</span><span class="tag" data-kind="genre" data-val="メイド">メイド</span><span class="tag" data-kind="genre" data-val="主観">主観</span><span class="tag" data-kind="genre" data-val="女優ベスト・総集編">女優ベスト・総集編</span><span class="tag" data-kind="genre" data-val="淫乱・ハード系">淫乱・ハード系</span><span class="tag" data-kind="genre" data-val="潮吹き">潮吹き</span><span class="tag" data-kind="genre" data-val="看護婦・ナース">看護婦・ナース</span><span class="tag" data-kind="genre" data-val="美少女">美少女</span></div></div><div class="s-section"><div class="s-label">メーカー</div><div class="tag-list"><span class="tag" data-kind="maker" data-val="マキシング">マキシング</span></div></div><div class="s-section"><div class="s-label">共演女優（46人）</div><div id="costarVis" style="display:flex;flex-wrap:wrap"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">きみの奈津</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">さくらじゅり</span><a href="actress-1034247.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">ひばり乃愛</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">三原ほのか</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">上城りおな</span></div><div id="costarHidden" style="display:none;flex-wrap:wrap;margin-top:4px"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">佐々波りの</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">佐野あおい</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">千葉ねね</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">南條ユナ</span><a href="actress-1029068.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">向井しほ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">咲乃柑菜</span><a href="actress-1040115.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">咲野の花</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">喜多方涼</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">夏乃ひまわり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">安達莉子</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">小向美奈子</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">小川みちる</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">川瀬なな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">愛沢かりん</span><a href="actress-1027369.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">木南日菜</a><a href="actress-1042123.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">桃尻かのん</a><a href="actress-1028301.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">桜井ゆづ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">椎名ひかる</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">横山美雪</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">波多野結衣</span><a href="actress-1029615.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">浅尾美羽</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">瀬名みづき</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">瀬田奏恵</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">牧瀬みさ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">由愛可奈</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">白石優杞菜</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">相庭ココ</span><a href="actress-1035005.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">石神さとみ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">神谷瑠里</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">紗凪美羽</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美咲ひな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美涼りな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">葉山瞳</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">西條るり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">陽向さえか</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">雪菜</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">青山はな</span><a href="actress-1030604.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">香純ゆい</a><a href="actress-1036236.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">高井ルナ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">麻生希</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">黒宮えいみ</span></div><button id="costarBtn" onclick="toggleCostarList()" style="display:block;width:100%;margin-top:8px;padding:6px;text-align:center;font-size:11px;cursor:pointer;border:1px solid #333;background:#1e1e1e;color:#aaa;border-radius:6px">+ 41人 もっと見る</button></div>
     <div class="s-section"><button class="clear-link" id="clearAll">すべてクリア</button></div>
   </aside>
   <div class="main-wrap">
@@ -406,58 +473,6 @@ footer{text-align:center;padding:28px 24px;font-size:11px;
         <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00653&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
       </div>
     </div>
-    <div class="work-card"
-         data-title="MAXINGちっぱいスレンダーボディセレクション"
-         data-genres="美少女,貧乳・微乳,スレンダー,ベスト・総集編,ハイビジョン,4時間以上作品"
-         data-directors=""
-         data-maker="マキシング"
-         data-actresses="陽向さえか,石神さとみ,白衣ゆき,紗凪美羽">
-      <div class="w-thumb">
-        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00605&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/h_068mxsps00605/h_068mxsps00605pl.jpg" alt="MAXINGちっぱいスレンダーボディセレクション" loading="lazy"></a>
-      </div>
-      <div class="w-body">
-        <div class="w-title">
-          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00605&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">MAXINGちっぱいスレンダーボディセレクション</a>
-        </div>
-        <dl class="w-meta">
-          <dt>配信日</dt><dd>2019-02-16</dd>
-          <dt>収録時間</dt><dd>—</dd>
-          <dt>出演女優</dt><dd>陽向さえか、石神さとみ、白衣ゆき、紗凪美羽</dd>
-          <dt>監督</dt><dd>—</dd>
-          <dt>メーカー</dt><dd>マキシング</dd>
-          
-          <dt>品番</dt><dd>h_068mxsps00605</dd>
-        </dl>
-        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('貧乳・微乳')">貧乳・微乳</span><span class="g-tag clickable-gtag" onclick="filterGenre('スレンダー')">スレンダー</span><span class="g-tag clickable-gtag" onclick="filterGenre('ベスト・総集編')">ベスト・総集編</span><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('4時間以上作品')">4時間以上作品</span></div>
-        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00605&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
-      </div>
-    </div>
-    <div class="work-card"
-         data-title="美躯撩乱！気高き美人アスリート12人 競泳水着 4時間 vol.4"
-         data-genres="ハイビジョン,競泳・スクール水着,ベスト・総集編,4時間以上作品"
-         data-directors=""
-         data-maker="マキシング"
-         data-actresses="由愛可奈,咲野の花,波多野結衣,清水理紗,大槻ひびき,陽向さえか,石神さとみ,小西悠,向井しほ">
-      <div class="w-thumb">
-        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00584&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/h_068mxsps00584/h_068mxsps00584pl.jpg" alt="美躯撩乱！気高き美人アスリート12人 競泳水着 4時間 vol.4" loading="lazy"></a>
-      </div>
-      <div class="w-body">
-        <div class="w-title">
-          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00584&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">美躯撩乱！気高き美人アスリート12人 競泳水着 4時間 vol.4</a>
-        </div>
-        <dl class="w-meta">
-          <dt>配信日</dt><dd>2018-07-16</dd>
-          <dt>収録時間</dt><dd>—</dd>
-          <dt>出演女優</dt><dd>由愛可奈、咲野の花、波多野結衣、清水理紗、大槻ひびき、陽向さえか、石神さとみ、小西悠、向井しほ</dd>
-          <dt>監督</dt><dd>—</dd>
-          <dt>メーカー</dt><dd>マキシング</dd>
-          <dt>シリーズ</dt><dd>美躯撩乱！</dd>
-          <dt>品番</dt><dd>h_068mxsps00584</dd>
-        </dl>
-        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ハイビジョン')">ハイビジョン</span><span class="g-tag clickable-gtag" onclick="filterGenre('競泳・スクール水着')">競泳・スクール水着</span><span class="g-tag clickable-gtag" onclick="filterGenre('ベスト・総集編')">ベスト・総集編</span><span class="g-tag clickable-gtag" onclick="filterGenre('4時間以上作品')">4時間以上作品</span></div>
-        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dh_068mxsps00584&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
-      </div>
-    </div>
       <div class="empty" id="emptyMsg" style="display:none">該当作品がありませんでした</div>
     </div>
   </div>
@@ -546,6 +561,10 @@ window.toggleCostarList = () => {
 };
 
 applyFilter();
+
+// スマホフィルター開閉
+window.openSPFilter  = () => { document.getElementById("spAside").classList.add("open"); document.getElementById("spOverlay").classList.add("open"); };
+window.closeSPFilter = () => { document.getElementById("spAside").classList.remove("open"); document.getElementById("spOverlay").classList.remove("open"); };
 </script>
 </body>
 </html>
