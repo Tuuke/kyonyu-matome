@@ -1,0 +1,32 @@
+# robots.txt - 巨乳・爆乳好きのまとめサイト
+
+# Googleは許可
+User-agent: Googlebot
+Allow: /
+
+# Bingは許可
+User-agent: Bingbot
+Allow: /
+
+# その他の主要検索エンジンは許可
+User-agent: *
+Allow: /
+
+# スクレイピングツールをブロック
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# サイトマップ
+Sitemap: https://tuuke.github.io/kyonyu-matome/sitemap.xml
