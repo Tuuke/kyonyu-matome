@@ -129,6 +129,11 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 .hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
 .hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
   border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.editor-comment{margin-top:10px;padding:10px 12px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.7;max-width:460px}
+.editor-label{display:block;font-size:10px;font-weight:700;color:var(--red);
+  letter-spacing:.1em;margin-bottom:4px}
 /* COSTAR */
 .costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
   background:var(--red-bg) !important;text-decoration:none;display:inline-block}
@@ -166,19 +171,79 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 footer{text-align:center;padding:28px 24px;font-size:11px;
   color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
 
+/* ── SP用フィルターボタン ── */
+.sp-filter-btn{
+  display:none;align-items:center;gap:6px;padding:6px 12px;
+  background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);border-radius:20px;font-size:12px;font-weight:700;
+  cursor:pointer;white-space:nowrap;flex-shrink:0
+}
+.sp-overlay{
+  display:none;position:fixed;inset:0;z-index:299;
+  background:rgba(0,0,0,.6)
+}
+.sp-overlay.open{display:block}
+.sp-close-btn{
+  position:absolute;top:14px;right:14px;
+  background:var(--bg3);border:1px solid var(--border2);
+  color:var(--text2);font-size:20px;width:36px;height:36px;
+  border-radius:50%;cursor:pointer;display:flex;
+  align-items:center;justify-content:center
+}
+
+@media(max-width:768px){
+  .sp-filter-btn{display:flex}
+  .layout{display:block}
+  aside{
+    display:none;position:fixed;left:0;top:0;bottom:0;z-index:300;
+    width:80%;max-width:280px;padding:56px 14px 20px;
+    overflow-y:auto;background:var(--bg2);
+    box-shadow:4px 0 20px rgba(0,0,0,.6)
+  }
+  aside.open{display:block}
+  .main-wrap{padding:12px}
+  .actress-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .kana-grid,.kana-grid-vis{grid-template-columns:repeat(4,1fr);gap:6px}
+  .works-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .a-body{padding:6px 8px 8px}
+  .a-name{font-size:11px}
+  .a-size{font-size:9px}
+  .a-cup{font-size:9px;padding:1px 5px}
+  .a-count{font-size:9px}
+  .w-body{padding:8px 10px 10px}
+  .w-title{font-size:11px}
+  .h-count{display:none}
+  .actress-hero{padding:12px;gap:10px;flex-wrap:wrap}
+  .hero-img{width:56px;height:75px}
+  .hero-name{font-size:16px}
+  .breadcrumb{padding:8px 12px;font-size:11px}
+  .editor-comment{max-width:100%}
+}
+@media(max-width:400px){
+  .actress-grid,.kana-grid,.kana-grid-vis{grid-template-columns:repeat(3,1fr);gap:4px}
+  .works-grid{grid-template-columns:repeat(1,1fr)}
+}
+
 .costar-link{color:var(--red)!important;border-color:rgba(230,57,70,.4)!important;background:rgba(230,57,70,.12)!important;text-decoration:none!important;display:inline-block!important;cursor:pointer!important;pointer-events:auto!important}
 .costar-link:hover{background:rgba(230,57,70,.25)!important}
 .more-btn{display:inline-block;margin-top:6px;cursor:pointer;font-size:11px}
 .clickable-gtag{cursor:pointer;transition:.12s}
 .clickable-gtag:hover{border-color:var(--red-dim);color:var(--text);background:var(--bg2)}
 .a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid var(--red-dim);background:var(--red-bg);color:var(--red);margin-top:3px}
+.editor-comment{margin-top:12px;padding:10px 14px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.8;max-width:460px}
+.editor-label{display:block;font-size:9px;font-weight:700;color:var(--red);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
 </style>
 </head>
 <body>
+<div class="sp-overlay" id="spOverlay" onclick="closeSPFilter()"></div>
 <header>
   <div class="logo"><a href="index.html">巨乳・爆乳<span>まとめ</span></a></div>
   <input class="h-search" id="titleSearch" type="text" placeholder="タイトルで絞り込み...">
   <div class="h-count" id="countDisplay"></div>
+  <button class="sp-filter-btn" onclick="openSPFilter()">☰</button>
 </header>
 <div class="breadcrumb"><a href="index.html">トップ</a> › 茉城まみ</div>
 <div class="actress-hero">
@@ -186,11 +251,13 @@ footer{text-align:center;padding:28px 24px;font-size:11px;
   <div>
     <div class="hero-name"><span>茉城まみ</span> 出演作品まとめ</div>
     <div class="hero-meta">B86 / W58 / H88　<span class="hero-cup">Eカップ（推定）</span></div>
-    <div class="hero-meta" style="margin-top:4px">全 0 件 ／ 2026/08/08 02:43 時点</div>
+    <div class="hero-meta" style="margin-top:4px">全 0 件 ／ 2026/08/08 04:11 時点</div>
+    
   </div>
 </div>
 <div class="layout">
-  <aside>
+  <aside id="spAside">
+    <button class="sp-close-btn" onclick="closeSPFilter()">×</button>
     
     <div class="s-section"><button class="clear-link" id="clearAll">すべてクリア</button></div>
   </aside>
@@ -286,6 +353,10 @@ window.toggleCostarList = () => {
 };
 
 applyFilter();
+
+// スマホフィルター開閉
+window.openSPFilter  = () => { document.getElementById("spAside").classList.add("open"); document.getElementById("spOverlay").classList.add("open"); };
+window.closeSPFilter = () => { document.getElementById("spAside").classList.remove("open"); document.getElementById("spOverlay").classList.remove("open"); };
 </script>
 </body>
 </html>

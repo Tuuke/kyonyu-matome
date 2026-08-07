@@ -129,6 +129,11 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 .hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
 .hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
   border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.editor-comment{margin-top:10px;padding:10px 12px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.7;max-width:460px}
+.editor-label{display:block;font-size:10px;font-weight:700;color:var(--red);
+  letter-spacing:.1em;margin-bottom:4px}
 /* COSTAR */
 .costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
   background:var(--red-bg) !important;text-decoration:none;display:inline-block}
@@ -166,19 +171,79 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 footer{text-align:center;padding:28px 24px;font-size:11px;
   color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
 
+/* ── SP用フィルターボタン ── */
+.sp-filter-btn{
+  display:none;align-items:center;gap:6px;padding:6px 12px;
+  background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);border-radius:20px;font-size:12px;font-weight:700;
+  cursor:pointer;white-space:nowrap;flex-shrink:0
+}
+.sp-overlay{
+  display:none;position:fixed;inset:0;z-index:299;
+  background:rgba(0,0,0,.6)
+}
+.sp-overlay.open{display:block}
+.sp-close-btn{
+  position:absolute;top:14px;right:14px;
+  background:var(--bg3);border:1px solid var(--border2);
+  color:var(--text2);font-size:20px;width:36px;height:36px;
+  border-radius:50%;cursor:pointer;display:flex;
+  align-items:center;justify-content:center
+}
+
+@media(max-width:768px){
+  .sp-filter-btn{display:flex}
+  .layout{display:block}
+  aside{
+    display:none;position:fixed;left:0;top:0;bottom:0;z-index:300;
+    width:80%;max-width:280px;padding:56px 14px 20px;
+    overflow-y:auto;background:var(--bg2);
+    box-shadow:4px 0 20px rgba(0,0,0,.6)
+  }
+  aside.open{display:block}
+  .main-wrap{padding:12px}
+  .actress-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .kana-grid,.kana-grid-vis{grid-template-columns:repeat(4,1fr);gap:6px}
+  .works-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .a-body{padding:6px 8px 8px}
+  .a-name{font-size:11px}
+  .a-size{font-size:9px}
+  .a-cup{font-size:9px;padding:1px 5px}
+  .a-count{font-size:9px}
+  .w-body{padding:8px 10px 10px}
+  .w-title{font-size:11px}
+  .h-count{display:none}
+  .actress-hero{padding:12px;gap:10px;flex-wrap:wrap}
+  .hero-img{width:56px;height:75px}
+  .hero-name{font-size:16px}
+  .breadcrumb{padding:8px 12px;font-size:11px}
+  .editor-comment{max-width:100%}
+}
+@media(max-width:400px){
+  .actress-grid,.kana-grid,.kana-grid-vis{grid-template-columns:repeat(3,1fr);gap:4px}
+  .works-grid{grid-template-columns:repeat(1,1fr)}
+}
+
 .costar-link{color:var(--red)!important;border-color:rgba(230,57,70,.4)!important;background:rgba(230,57,70,.12)!important;text-decoration:none!important;display:inline-block!important;cursor:pointer!important;pointer-events:auto!important}
 .costar-link:hover{background:rgba(230,57,70,.25)!important}
 .more-btn{display:inline-block;margin-top:6px;cursor:pointer;font-size:11px}
 .clickable-gtag{cursor:pointer;transition:.12s}
 .clickable-gtag:hover{border-color:var(--red-dim);color:var(--text);background:var(--bg2)}
 .a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid var(--red-dim);background:var(--red-bg);color:var(--red);margin-top:3px}
+.editor-comment{margin-top:12px;padding:10px 14px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.8;max-width:460px}
+.editor-label{display:block;font-size:9px;font-weight:700;color:var(--red);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
 </style>
 </head>
 <body>
+<div class="sp-overlay" id="spOverlay" onclick="closeSPFilter()"></div>
 <header>
   <div class="logo"><a href="index.html">巨乳・爆乳<span>まとめ</span></a></div>
   <input class="h-search" id="titleSearch" type="text" placeholder="タイトルで絞り込み...">
   <div class="h-count" id="countDisplay"></div>
+  <button class="sp-filter-btn" onclick="openSPFilter()">☰</button>
 </header>
 <div class="breadcrumb"><a href="index.html">トップ</a> › 本郷愛（二階堂夢）</div>
 <div class="actress-hero">
@@ -186,11 +251,13 @@ footer{text-align:center;padding:28px 24px;font-size:11px;
   <div>
     <div class="hero-name"><span>本郷愛（二階堂夢）</span> 出演作品まとめ</div>
     <div class="hero-meta">B85 / W53 / H85　<span class="hero-cup">Fカップ</span></div>
-    <div class="hero-meta" style="margin-top:4px">全 100 件 ／ 2026/08/08 02:43 時点</div>
+    <div class="hero-meta" style="margin-top:4px">全 100 件 ／ 2026/08/08 04:11 時点</div>
+    
   </div>
 </div>
 <div class="layout">
-  <aside>
+  <aside id="spAside">
+    <button class="sp-close-btn" onclick="closeSPFilter()">×</button>
     <div class="s-section"><div class="s-label">ジャンル</div><div class="tag-list"><span class="tag" data-kind="genre" data-val="16時間以上作品">16時間以上作品</span><span class="tag" data-kind="genre" data-val="3P・4P">3P・4P</span><span class="tag" data-kind="genre" data-val="4時間以上作品">4時間以上作品</span><span class="tag" data-kind="genre" data-val="M女">M女</span><span class="tag" data-kind="genre" data-val="M男">M男</span><span class="tag" data-kind="genre" data-val="OL">OL</span><span class="tag" data-kind="genre" data-val="VR専用">VR専用</span><span class="tag" data-kind="genre" data-val="お姉さん">お姉さん</span><span class="tag" data-kind="genre" data-val="お風呂">お風呂</span><span class="tag" data-kind="genre" data-val="その他フェチ">その他フェチ</span><span class="tag" data-kind="genre" data-val="ぶっかけ">ぶっかけ</span><span class="tag" data-kind="genre" data-val="めがね">めがね</span><span class="tag" data-kind="genre" data-val="アクメ・オーガズム">アクメ・オーガズム</span><span class="tag" data-kind="genre" data-val="アスリート">アスリート</span><span class="tag" data-kind="genre" data-val="アナル">アナル</span><span class="tag" data-kind="genre" data-val="イメージビデオ">イメージビデオ</span><span class="tag" data-kind="genre" data-val="イラマチオ">イラマチオ</span><span class="tag" data-kind="genre" data-val="インストラクター">インストラクター</span><span class="tag" data-kind="genre" data-val="エステ">エステ</span><span class="tag" data-kind="genre" data-val="オナサポ">オナサポ</span><span class="tag" data-kind="genre" data-val="カップル">カップル</span><span class="tag" data-kind="genre" data-val="キス・接吻">キス・接吻</span><span class="tag" data-kind="genre" data-val="キャバ嬢・風俗嬢">キャバ嬢・風俗嬢</span><span class="tag" data-kind="genre" data-val="コスプレ">コスプレ</span><span class="tag" data-kind="genre" data-val="スレンダー">スレンダー</span><span class="tag" data-kind="genre" data-val="セクシー">セクシー</span><span class="tag" data-kind="genre" data-val="チアガール">チアガール</span><span class="tag" data-kind="genre" data-val="デカチン・巨根">デカチン・巨根</span><span class="tag" data-kind="genre" data-val="デビュー作品">デビュー作品</span><span class="tag" data-kind="genre" data-val="ドキュメンタリー">ドキュメンタリー</span><span class="tag" data-kind="genre" data-val="ドラマ">ドラマ</span><span class="tag" data-kind="genre" data-val="ノーブラ">ノーブラ</span><span class="tag" data-kind="genre" data-val="ハイクオリティVR">ハイクオリティVR</span><span class="tag" data-kind="genre" data-val="ハイビジョン">ハイビジョン</span><span class="tag" data-kind="genre" data-val="バック">バック</span><span class="tag" data-kind="genre" data-val="バニーガール">バニーガール</span><span class="tag" data-kind="genre" data-val="パイズリ">パイズリ</span><span class="tag" data-kind="genre" data-val="パイパン">パイパン</span><span class="tag" data-kind="genre" data-val="パンチラ">パンチラ</span><span class="tag" data-kind="genre" data-val="ビッチ">ビッチ</span><span class="tag" data-kind="genre" data-val="ファン感謝・訪問">ファン感謝・訪問</span><span class="tag" data-kind="genre" data-val="フェラ">フェラ</span><span class="tag" data-kind="genre" data-val="ヘルス・ソープ">ヘルス・ソープ</span><span class="tag" data-kind="genre" data-val="ポルチオ">ポルチオ</span><span class="tag" data-kind="genre" data-val="マッサージ・リフレ">マッサージ・リフレ</span><span class="tag" data-kind="genre" data-val="ミニスカ">ミニスカ</span><span class="tag" data-kind="genre" data-val="メイド">メイド</span><span class="tag" data-kind="genre" data-val="モデル">モデル</span><span class="tag" data-kind="genre" data-val="ランジェリー">ランジェリー</span><span class="tag" data-kind="genre" data-val="ローション・オイル">ローション・オイル</span><span class="tag" data-kind="genre" data-val="中出し">中出し</span><span class="tag" data-kind="genre" data-val="主観">主観</span><span class="tag" data-kind="genre" data-val="乱交">乱交</span><span class="tag" data-kind="genre" data-val="人妻・主婦">人妻・主婦</span><span class="tag" data-kind="genre" data-val="制服">制服</span><span class="tag" data-kind="genre" data-val="単体作品">単体作品</span><span class="tag" data-kind="genre" data-val="和服・浴衣">和服・浴衣</span><span class="tag" data-kind="genre" data-val="女優ベスト・総集編">女優ベスト・総集編</span><span class="tag" data-kind="genre" data-val="女子大生">女子大生</span><span class="tag" data-kind="genre" data-val="女子校生">女子校生</span><span class="tag" data-kind="genre" data-val="姉・妹">姉・妹</span><span class="tag" data-kind="genre" data-val="学生服">学生服</span><span class="tag" data-kind="genre" data-val="寝取り・寝取られ・NTR">寝取り・寝取られ・NTR</span><span class="tag" data-kind="genre" data-val="尻フェチ">尻フェチ</span><span class="tag" data-kind="genre" data-val="巨乳">巨乳</span><span class="tag" data-kind="genre" data-val="巨乳フェチ">巨乳フェチ</span><span class="tag" data-kind="genre" data-val="巨尻">巨尻</span><span class="tag" data-kind="genre" data-val="幼なじみ">幼なじみ</span><span class="tag" data-kind="genre" data-val="恋愛">恋愛</span><span class="tag" data-kind="genre" data-val="手コキ">手コキ</span><span class="tag" data-kind="genre" data-val="放尿・お漏らし">放尿・お漏らし</span><span class="tag" data-kind="genre" data-val="残虐表現">残虐表現</span><span class="tag" data-kind="genre" data-val="汗だく">汗だく</span><span class="tag" data-kind="genre" data-val="淫乱・ハード系">淫乱・ハード系</span><span class="tag" data-kind="genre" data-val="淫語">淫語</span><span class="tag" data-kind="genre" data-val="温泉">温泉</span><span class="tag" data-kind="genre" data-val="潮吹き">潮吹き</span><span class="tag" data-kind="genre" data-val="男の潮吹き">男の潮吹き</span><span class="tag" data-kind="genre" data-val="病院・クリニック">病院・クリニック</span><span class="tag" data-kind="genre" data-val="痴女">痴女</span><span class="tag" data-kind="genre" data-val="盗撮・のぞき">盗撮・のぞき</span><span class="tag" data-kind="genre" data-val="看護婦・ナース">看護婦・ナース</span><span class="tag" data-kind="genre" data-val="競泳・スクール水着">競泳・スクール水着</span><span class="tag" data-kind="genre" data-val="美乳">美乳</span><span class="tag" data-kind="genre" data-val="美少女">美少女</span><span class="tag" data-kind="genre" data-val="羞恥">羞恥</span><span class="tag" data-kind="genre" data-val="職業色々">職業色々</span><span class="tag" data-kind="genre" data-val="若妻・幼妻">若妻・幼妻</span><span class="tag" data-kind="genre" data-val="辱め">辱め</span><span class="tag" data-kind="genre" data-val="近親相姦">近親相姦</span><span class="tag" data-kind="genre" data-val="逆ナン">逆ナン</span><span class="tag" data-kind="genre" data-val="部下・同僚">部下・同僚</span><span class="tag" data-kind="genre" data-val="野外・露出">野外・露出</span><span class="tag" data-kind="genre" data-val="電マ">電マ</span><span class="tag" data-kind="genre" data-val="顔射">顔射</span><span class="tag" data-kind="genre" data-val="顔面騎乗">顔面騎乗</span><span class="tag" data-kind="genre" data-val="騎乗位">騎乗位</span></div></div><div class="s-section"><div class="s-label">監督</div><div class="tag-list"><span class="tag" data-kind="director" data-val="AKIRA">AKIRA</span><span class="tag" data-kind="director" data-val="FLAGMAN">FLAGMAN</span><span class="tag" data-kind="director" data-val="TAKE-D">TAKE-D</span><span class="tag" data-kind="director" data-val="ZAMPA">ZAMPA</span><span class="tag" data-kind="director" data-val="えび">えび</span><span class="tag" data-kind="director" data-val="カンナナ・ダイナナ">カンナナ・ダイナナ</span><span class="tag" data-kind="director" data-val="ストロベリー豆蔵">ストロベリー豆蔵</span><span class="tag" data-kind="director" data-val="テキラティーノ">テキラティーノ</span><span class="tag" data-kind="director" data-val="ナスティ・サンチェス">ナスティ・サンチェス</span><span class="tag" data-kind="director" data-val="ワッツあっぷ！大宮">ワッツあっぷ！大宮</span><span class="tag" data-kind="director" data-val="五右衛門">五右衛門</span><span class="tag" data-kind="director" data-val="前田智徳">前田智徳</span><span class="tag" data-kind="director" data-val="太宰珍歩">太宰珍歩</span><span class="tag" data-kind="director" data-val="山口メンバー">山口メンバー</span><span class="tag" data-kind="director" data-val="摩天楼">摩天楼</span><span class="tag" data-kind="director" data-val="紫堂安二郎">紫堂安二郎</span><span class="tag" data-kind="director" data-val="赤井彗星">赤井彗星</span><span class="tag" data-kind="director" data-val="麒麟">麒麟</span></div></div><div class="s-section"><div class="s-label">メーカー</div><div class="tag-list"><span class="tag" data-kind="maker" data-val="FALENO">FALENO</span><span class="tag" data-kind="maker" data-val="ファインピクチャーズ">ファインピクチャーズ</span><span class="tag" data-kind="maker" data-val="マーレーインターナショナル">マーレーインターナショナル</span><span class="tag" data-kind="maker" data-val="メディアブランド">メディアブランド</span></div></div><div class="s-section"><div class="s-label">共演女優（34人）</div><div id="costarVis" style="display:flex;flex-wrap:wrap"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">いちか先生</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">七海ティナ</span><a href="actress-1066895.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">三浦乃愛</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">三葉ちはる</span><a href="actress-1073510.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">五十嵐なつ</a></div><div id="costarHidden" style="display:none;flex-wrap:wrap;margin-top:4px"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">友田彩也香</span><a href="actress-1055895.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">吉岡ひより</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">吉高寧々</span><a href="actress-1072418.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">堀沢茉由</a><a href="actress-1068961.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">夏木りん</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">天使もえ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">天国るる</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">天川そら</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">小野夕子</span><a href="actress-1066231.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">川北メイサ</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">戸田真琴</span><a href="actress-1073511.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">時田亜美</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">月乃さくら</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">有坂真宵</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">望実れい</span><a href="actress-1067531.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">本田もも</a><a href="actress-1059753.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">本郷愛（二階堂夢）</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">東條なつ</span><a href="actress-1060745.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">桃尻かなめ</a><a href="actress-1032097.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">椎名そら</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">橋本ありな</span><a href="actress-1049255.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">永瀬みなも</a><a href="actress-1064143.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">沙月恵奈</a><a href="actress-1038230.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">河南実里</a><a href="actress-1057831.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">白坂有以</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">神木サラ</span><a href="actress-1078186.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">神木蘭</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美乃すずめ</span><a href="actress-1076492.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">逢月ひまり</a></div><button id="costarBtn" onclick="toggleCostarList()" style="display:block;width:100%;margin-top:8px;padding:6px;text-align:center;font-size:11px;cursor:pointer;border:1px solid #333;background:#1e1e1e;color:#aaa;border-radius:6px">+ 29人 もっと見る</button></div>
     <div class="s-section"><button class="clear-link" id="clearAll">すべてクリア</button></div>
   </aside>
@@ -2886,6 +2953,10 @@ window.toggleCostarList = () => {
 };
 
 applyFilter();
+
+// スマホフィルター開閉
+window.openSPFilter  = () => { document.getElementById("spAside").classList.add("open"); document.getElementById("spOverlay").classList.add("open"); };
+window.closeSPFilter = () => { document.getElementById("spAside").classList.remove("open"); document.getElementById("spOverlay").classList.remove("open"); };
 </script>
 </body>
 </html>
