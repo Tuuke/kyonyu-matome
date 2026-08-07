@@ -129,6 +129,11 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 .hero-meta{font-size:12px;color:var(--text2);margin-bottom:5px}
 .hero-cup{font-size:12px;font-weight:700;padding:3px 10px;
   border-radius:12px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red)}
+.editor-comment{margin-top:10px;padding:10px 12px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.7;max-width:460px}
+.editor-label{display:block;font-size:10px;font-weight:700;color:var(--red);
+  letter-spacing:.1em;margin-bottom:4px}
 /* COSTAR */
 .costar-link{color:var(--red) !important;border-color:var(--red-border) !important;
   background:var(--red-bg) !important;text-decoration:none;display:inline-block}
@@ -166,19 +171,79 @@ aside{background:var(--bg2);border-right:1px solid var(--border);
 footer{text-align:center;padding:28px 24px;font-size:11px;
   color:var(--muted);border-top:1px solid var(--border);margin-top:24px}
 
+/* ── SP用フィルターボタン ── */
+.sp-filter-btn{
+  display:none;align-items:center;gap:6px;padding:6px 12px;
+  background:var(--red-bg);border:1px solid var(--red-border);
+  color:var(--red);border-radius:20px;font-size:12px;font-weight:700;
+  cursor:pointer;white-space:nowrap;flex-shrink:0
+}
+.sp-overlay{
+  display:none;position:fixed;inset:0;z-index:299;
+  background:rgba(0,0,0,.6)
+}
+.sp-overlay.open{display:block}
+.sp-close-btn{
+  position:absolute;top:14px;right:14px;
+  background:var(--bg3);border:1px solid var(--border2);
+  color:var(--text2);font-size:20px;width:36px;height:36px;
+  border-radius:50%;cursor:pointer;display:flex;
+  align-items:center;justify-content:center
+}
+
+@media(max-width:768px){
+  .sp-filter-btn{display:flex}
+  .layout{display:block}
+  aside{
+    display:none;position:fixed;left:0;top:0;bottom:0;z-index:300;
+    width:80%;max-width:280px;padding:56px 14px 20px;
+    overflow-y:auto;background:var(--bg2);
+    box-shadow:4px 0 20px rgba(0,0,0,.6)
+  }
+  aside.open{display:block}
+  .main-wrap{padding:12px}
+  .actress-grid{grid-template-columns:repeat(4,1fr);gap:6px}
+  .kana-grid,.kana-grid-vis{grid-template-columns:repeat(4,1fr);gap:6px}
+  .works-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .a-body{padding:6px 8px 8px}
+  .a-name{font-size:11px}
+  .a-size{font-size:9px}
+  .a-cup{font-size:9px;padding:1px 5px}
+  .a-count{font-size:9px}
+  .w-body{padding:8px 10px 10px}
+  .w-title{font-size:11px}
+  .h-count{display:none}
+  .actress-hero{padding:12px;gap:10px;flex-wrap:wrap}
+  .hero-img{width:56px;height:75px}
+  .hero-name{font-size:16px}
+  .breadcrumb{padding:8px 12px;font-size:11px}
+  .editor-comment{max-width:100%}
+}
+@media(max-width:400px){
+  .actress-grid,.kana-grid,.kana-grid-vis{grid-template-columns:repeat(3,1fr);gap:4px}
+  .works-grid{grid-template-columns:repeat(1,1fr)}
+}
+
 .costar-link{color:var(--red)!important;border-color:rgba(230,57,70,.4)!important;background:rgba(230,57,70,.12)!important;text-decoration:none!important;display:inline-block!important;cursor:pointer!important;pointer-events:auto!important}
 .costar-link:hover{background:rgba(230,57,70,.25)!important}
 .more-btn{display:inline-block;margin-top:6px;cursor:pointer;font-size:11px}
 .clickable-gtag{cursor:pointer;transition:.12s}
 .clickable-gtag:hover{border-color:var(--red-dim);color:var(--text);background:var(--bg2)}
 .a-cup{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;border:1px solid var(--red-dim);background:var(--red-bg);color:var(--red);margin-top:3px}
+.editor-comment{margin-top:12px;padding:10px 14px;background:var(--bg3);
+  border-left:3px solid var(--red);border-radius:0 6px 6px 0;
+  font-size:12px;color:var(--text2);line-height:1.8;max-width:460px}
+.editor-label{display:block;font-size:9px;font-weight:700;color:var(--red);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
 </style>
 </head>
 <body>
+<div class="sp-overlay" id="spOverlay" onclick="closeSPFilter()"></div>
 <header>
   <div class="logo"><a href="index.html">巨乳・爆乳<span>まとめ</span></a></div>
   <input class="h-search" id="titleSearch" type="text" placeholder="タイトルで絞り込み...">
   <div class="h-count" id="countDisplay"></div>
+  <button class="sp-filter-btn" onclick="openSPFilter()">☰</button>
 </header>
 <div class="breadcrumb"><a href="index.html">トップ</a> › 星南きらり</div>
 <div class="actress-hero">
@@ -186,70 +251,20 @@ footer{text-align:center;padding:28px 24px;font-size:11px;
   <div>
     <div class="hero-name"><span>星南きらり</span> 出演作品まとめ</div>
     <div class="hero-meta">B96 / W60 / H88　<span class="hero-cup">Iカップ</span></div>
-    <div class="hero-meta" style="margin-top:4px">全 2 件 ／ 2026/08/08 02:43 時点</div>
+    <div class="hero-meta" style="margin-top:4px">全 0 件 ／ 2026/08/08 04:11 時点</div>
+    
   </div>
 </div>
 <div class="layout">
-  <aside>
-    <div class="s-section"><div class="s-label">ジャンル</div><div class="tag-list"><span class="tag" data-kind="genre" data-val="4時間以上作品">4時間以上作品</span><span class="tag" data-kind="genre" data-val="お姉さん">お姉さん</span><span class="tag" data-kind="genre" data-val="デジモ">デジモ</span><span class="tag" data-kind="genre" data-val="デビュー作品">デビュー作品</span><span class="tag" data-kind="genre" data-val="ベスト・総集編">ベスト・総集編</span><span class="tag" data-kind="genre" data-val="女子校生">女子校生</span><span class="tag" data-kind="genre" data-val="学生服">学生服</span><span class="tag" data-kind="genre" data-val="独占配信">独占配信</span><span class="tag" data-kind="genre" data-val="美少女">美少女</span></div></div><div class="s-section"><div class="s-label">メーカー</div><div class="tag-list"><span class="tag" data-kind="maker" data-val="アイデアポケット">アイデアポケット</span></div></div><div class="s-section"><div class="s-label">共演女優（38人）</div><div id="costarVis" style="display:flex;flex-wrap:wrap"><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">☆LUNA☆</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">今井ひろの</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">佳苗るか</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">前田かおり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">原更紗</span></div><div id="costarHidden" style="display:none;flex-wrap:wrap;margin-top:4px"><a href="actress-1034134.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">堀北さくら</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">天海つばさ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">希島あいり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">希崎ジェシカ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">希志あいの</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">希美まゆ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">悠木ユリカ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">成宮カナ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">成瀬心美（ここみ）</span><a href="actress-1029210.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">星南きらり</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">星美りか</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">柚希あおい</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">柴咲エリカ</span><a href="actress-1031805.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">桃乃木かな</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">桐谷ユリア</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">桜木優希音</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">森咲みちる</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">榊梨々亜</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">横山美雪</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">浅野えみ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">白川麻衣</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">百田ゆきな</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">紗々原ゆり</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美月レイア</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">美波なみ</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">羽田あい</span><a href="actress-1034094.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">西原亜実</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">辻仁美</span><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">逢坂はるな</span><a href="actress-1033895.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">雪白かん菜</a><a href="actress-1033692.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">麻丘みゆう</a><a href="actress-1033057.html" style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#e63946;border:1px solid rgba(230,57,70,.4);background:rgba(230,57,70,.12);text-decoration:none;cursor:pointer">麻生遥</a><span style="font-size:11px;padding:4px 10px;border-radius:20px;display:inline-block;white-space:nowrap;margin:0 4px 4px 0;color:#aaa;border:1px solid #333;background:#1e1e1e">黒木いちか（東条かれん）</span></div><button id="costarBtn" onclick="toggleCostarList()" style="display:block;width:100%;margin-top:8px;padding:6px;text-align:center;font-size:11px;cursor:pointer;border:1px solid #333;background:#1e1e1e;color:#aaa;border-radius:6px">+ 33人 もっと見る</button></div>
+  <aside id="spAside">
+    <button class="sp-close-btn" onclick="closeSPFilter()">×</button>
+    
     <div class="s-section"><button class="clear-link" id="clearAll">すべてクリア</button></div>
   </aside>
   <div class="main-wrap">
     <div class="chips" id="chips"></div>
     <div class="works-grid" id="grid">
 
-    <div class="work-card"
-         data-title="初めての人前でのエッチですっごく恥かしかったけど男優さんのオチ○チンが気持良過ぎて…正直感じちゃいました。 S級美女たちのデビュー作から集めた初々しい初セックスBEST8時間！"
-         data-genres="ベスト・総集編,お姉さん,美少女,デビュー作品,独占配信,デジモ"
-         data-directors=""
-         data-maker="アイデアポケット"
-         data-actresses="桃乃木かな,榊梨々亜,紗々原ゆり,西原亜実,堀北さくら,白川麻衣,桜木優希音,逢坂はるな,雪白かん菜,麻丘みゆう,美月レイア,悠木ユリカ,星南きらり,森咲みちる,麻生遥,美波なみ">
-      <div class="w-thumb">
-        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Didbd00758&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/idbd00758/idbd00758pl.jpg" alt="初めての人前でのエッチですっごく恥かしかったけど男優さんのオチ○チンが気持良過ぎて…正直感じちゃいました。 S級美女たちのデビュー作から集めた初々しい初セックスBEST8時間！" loading="lazy"></a>
-      </div>
-      <div class="w-body">
-        <div class="w-title">
-          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Didbd00758&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">初めての人前でのエッチですっごく恥かしかったけど男優さんのオチ○チンが気持良過ぎて…正直感じちゃいました。 S級美女たちのデビュー作から集めた初々しい初セックスBEST8時間！</a>
-        </div>
-        <dl class="w-meta">
-          <dt>配信日</dt><dd>2018-02-03</dd>
-          <dt>収録時間</dt><dd>—</dd>
-          <dt>出演女優</dt><dd>桃乃木かな、榊梨々亜、紗々原ゆり、西原亜実、堀北さくら、白川麻衣、桜木優希音、逢坂はるな、雪白かん菜、麻丘みゆう、美月レイア、悠木ユリカ、星南きらり、森咲みちる、麻生遥、美波なみ</dd>
-          <dt>監督</dt><dd>—</dd>
-          <dt>メーカー</dt><dd>アイデアポケット</dd>
-          
-          <dt>品番</dt><dd>idbd00758</dd>
-        </dl>
-        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('ベスト・総集編')">ベスト・総集編</span><span class="g-tag clickable-gtag" onclick="filterGenre('お姉さん')">お姉さん</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('デビュー作品')">デビュー作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('独占配信')">独占配信</span><span class="g-tag clickable-gtag" onclick="filterGenre('デジモ')">デジモ</span></div>
-        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Didbd00758&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
-      </div>
-    </div>
-    <div class="work-card"
-         data-title="制服着たまま学校でするセックスってどうしてこんなに興奮するんだろう8時間！！"
-         data-genres="女子校生,学生服,ベスト・総集編,美少女,独占配信,4時間以上作品,デジモ"
-         data-directors=""
-         data-maker="アイデアポケット"
-         data-actresses="西原亜実,桐谷ユリア,☆LUNA☆,今井ひろの,星美りか,麻丘みゆう,百田ゆきな,逢坂はるな,成宮カナ,希島あいり,前田かおり,佳苗るか,星南きらり,羽田あい,柴咲エリカ,希崎ジェシカ,希美まゆ,横山美雪,成瀬心美（ここみ）,天海つばさ,希志あいの,美波なみ,柚希あおい,原更紗,浅野えみ,黒木いちか（東条かれん）,辻仁美,桃乃木かな">
-      <div class="w-thumb">
-        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Didbd00766&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow"><img src="https://pics.dmm.co.jp/digital/video/idbd00766/idbd00766pl.jpg" alt="制服着たまま学校でするセックスってどうしてこんなに興奮するんだろう8時間！！" loading="lazy"></a>
-      </div>
-      <div class="w-body">
-        <div class="w-title">
-          <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Didbd00766&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">制服着たまま学校でするセックスってどうしてこんなに興奮するんだろう8時間！！</a>
-        </div>
-        <dl class="w-meta">
-          <dt>配信日</dt><dd>2018-01-27</dd>
-          <dt>収録時間</dt><dd>—</dd>
-          <dt>出演女優</dt><dd>西原亜実、桐谷ユリア、☆LUNA☆、今井ひろの、星美りか、麻丘みゆう、百田ゆきな、逢坂はるな、成宮カナ、希島あいり、前田かおり、佳苗るか、星南きらり、羽田あい、柴咲エリカ、希崎ジェシカ、希美まゆ、横山美雪、成瀬心美（ここみ）、天海つばさ、希志あいの、美波なみ、柚希あおい、原更紗、浅野えみ、黒木いちか（東条かれん）、辻仁美、桃乃木かな</dd>
-          <dt>監督</dt><dd>—</dd>
-          <dt>メーカー</dt><dd>アイデアポケット</dd>
-          
-          <dt>品番</dt><dd>idbd00766</dd>
-        </dl>
-        <div class="g-tags"><span class="g-tag clickable-gtag" onclick="filterGenre('女子校生')">女子校生</span><span class="g-tag clickable-gtag" onclick="filterGenre('学生服')">学生服</span><span class="g-tag clickable-gtag" onclick="filterGenre('ベスト・総集編')">ベスト・総集編</span><span class="g-tag clickable-gtag" onclick="filterGenre('美少女')">美少女</span><span class="g-tag clickable-gtag" onclick="filterGenre('独占配信')">独占配信</span><span class="g-tag clickable-gtag" onclick="filterGenre('4時間以上作品')">4時間以上作品</span><span class="g-tag clickable-gtag" onclick="filterGenre('デジモ')">デジモ</span></div>
-        <a class="btn-fanza" href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Didbd00766&af_id=osusumemvad-002&ch=api" target="_blank" rel="noopener noreferrer nofollow">FANZAで見る →</a>
-      </div>
-    </div>
       <div class="empty" id="emptyMsg" style="display:none">該当作品がありませんでした</div>
     </div>
   </div>
@@ -338,6 +353,10 @@ window.toggleCostarList = () => {
 };
 
 applyFilter();
+
+// スマホフィルター開閉
+window.openSPFilter  = () => { document.getElementById("spAside").classList.add("open"); document.getElementById("spOverlay").classList.add("open"); };
+window.closeSPFilter = () => { document.getElementById("spAside").classList.remove("open"); document.getElementById("spOverlay").classList.remove("open"); };
 </script>
 </body>
 </html>
